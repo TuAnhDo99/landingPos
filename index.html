@@ -27,20 +27,16 @@
       }
       html {
         scroll-behavior: smooth;
-      }
-
-      body {
         position: relative;
       }
 
       html,
       body {
-        margin: 0;
-        padding: 0;
         overflow-x: hidden;
       }
 
       .banner {
+        margin-top: 100px;
         width: 100%;
         height: auto;
         position: relative;
@@ -82,7 +78,7 @@
       .nav {
         width: 100%;
         height: 100px;
-        position: sticky;
+        position: fixed;
         top: 0;
         background-color: #fff;
         z-index: 100;
@@ -1700,7 +1696,9 @@
 
         .banner {
           min-height: unset;
+          margin-top: 65px;
         }
+
         h2 {
           text-align: left;
           font-weight: 400;
