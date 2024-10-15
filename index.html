@@ -1,0 +1,3716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      @font-face {
+        font-family: "LeagueGothic";
+        src: url(./fonts/LeagueGothic-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: "Lato";
+        src: url(./fonts/Lato\ Regular.ttf);
+      }
+
+      @font-face {
+        font-family: "Madimi One";
+        src: url(./fonts/MadimiOne-Regular.ttf);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        position: relative;
+      }
+
+      .banner {
+        width: 100%;
+        height: auto;
+        position: relative;
+        /* background: url(./images/bg-banner-new.png) center center / cover no-repeat; */
+      }
+
+      .qr-taingay {
+        position: fixed;
+        z-index: 101;
+        right: 20px;
+        top: 90px;
+      }
+
+      .qr-taingay.active {
+        z-index: 99;
+      }
+
+      .owl-banner .owl-dots {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+      }
+
+      .owl-banner .owl-dots .owl-dot span {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+      }
+
+      .owl-banner .owl-dots .owl-dot.active span {
+        background-color: #fff !important;
+      }
+
+      .owl-item .item img.img-tablet {
+        display: none;
+      }
+      .owl-item .item img.img-mobile {
+        display: none;
+      }
+
+      .nav {
+        width: 100%;
+        height: 100px;
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+        z-index: 100;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
+      }
+
+      .nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        max-width: 1700px;
+      }
+
+      .logo {
+        width: 245px;
+        height: auto;
+      }
+
+      .list-menu {
+        font-family: "Lato";
+        color: #fff;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.3px;
+      }
+
+      .list-menu a {
+        margin-left: 20px;
+        padding-bottom: 2px;
+        color: #000000;
+        padding: 12px 25px;
+        border-radius: 45px;
+      }
+
+      .list-menu a:hover {
+        background-color: #f0b639 !important;
+        font-family: "Lato";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        box-shadow: 4px 8px 20px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .list-menu a:last-child {
+        width: 194px;
+        height: 50px;
+        border-radius: 10px;
+        background: #0060af;
+        color: #fff;
+        font-family: "Lato";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        border: none;
+        margin-left: 40px;
+        transition: background-color 0.3s ease;
+      }
+
+      .list-menu a:last-child:hover {
+        background-color: #004080 !important; /* Change background color on hover */
+      }
+
+      h2 {
+        font-family: "LeagueGothic";
+        color: #000;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.408px;
+        text-align: left;
+        letter-spacing: 0.96px;
+      }
+
+      h2 span {
+        display: block;
+        color: #0060af;
+
+        -webkit-text-stroke-width: 1;
+        -webkit-text-stroke-color: #d9d9d9;
+        font-family: "LeagueGothic";
+        font-size: 93px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .banner-txt {
+        color: #fff;
+
+        -webkit-text-stroke-width: 1;
+        -webkit-text-stroke-color: #d9d9d9;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px; /* 166.667% */
+        text-align: left;
+        max-width: 515px;
+        margin-bottom: 50px;
+      }
+
+      .btn-more {
+        display: block;
+        width: 211px;
+        height: 57px;
+        flex-shrink: 0;
+        border-radius: 15px;
+        border: 1px solid #d9d9d9;
+        background: #ffe768;
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+        color: #000;
+        text-align: center;
+        -webkit-text-stroke-width: 1;
+        -webkit-text-stroke-color: #d9d9d9;
+        font-family: "Lato";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 57px;
+        letter-spacing: 0.36px;
+        margin-top: 45px;
+      }
+
+      .solution {
+        width: 100%;
+        height: 100%;
+        min-height: 900px;
+        background: url(./images/bg-solution.png) center center / cover
+          no-repeat;
+        background-color: linear-gradient(
+          180deg,
+          #fff 33.78%,
+          rgba(255, 255, 255, 0) 100%
+        );
+
+        background-size: 90% 70%;
+      }
+
+      .solution .container {
+        padding-top: 150px;
+        padding-bottom: 100px;
+      }
+
+      .solution img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      h3 {
+        color: #3e3e3e;
+
+        text-align: center;
+        font-family: "Lato";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+      }
+
+      h4 {
+        color: #0060af;
+
+        text-align: center;
+        font-family: "Lato";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .sln-image {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .benefit-ref {
+        color: #000;
+
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .benefit-ref::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -50px;
+        width: 38px;
+        height: 38px;
+      }
+      .benefit-ref.ref1::before {
+        background: url(./images/disc1.png) center center / cover no-repeat;
+      }
+
+      .benefit-ref.ref2::before {
+        background: url(./images/disc2.png) center center / cover no-repeat;
+      }
+
+      .benefit-ref.ref3::before {
+        background: url(./images/disc3.png) center center / cover no-repeat;
+      }
+
+      .solution ul {
+        color: #000;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 30px;
+      }
+      .solution ul li {
+        margin-bottom: 10px;
+      }
+
+      .benefit-container {
+        margin-left: 50px;
+      }
+
+      .list-feature {
+        margin-left: 80px;
+      }
+
+      .list-feature li {
+        position: relative;
+      }
+
+      .list-feature li::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: -15px;
+        width: 10px;
+        height: 10px;
+        background: #f0b639;
+        border-radius: 50%;
+      }
+
+      .guide {
+        width: 100%;
+        height: auto;
+        min-height: 994px;
+        background: url(./images/bg-guide.png) center center / cover no-repeat;
+        background-color: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) 2.83%,
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
+
+      .guide .container {
+        padding-top: 130px;
+        padding-bottom: 100px;
+      }
+
+      .guide-wrapper {
+        position: relative;
+      }
+
+      .border-guide {
+        display: block;
+        width: 1469px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      .list-tab a {
+        display: block;
+        color: var(--xam, #696969);
+        text-align: center;
+        font-family: "Lato";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .list-tab a:nth-child(1) {
+        width: 276px;
+        position: absolute;
+        top: 14px;
+        left: 20px;
+      }
+
+      .list-tab a:nth-child(2) {
+        width: 412px;
+        position: absolute;
+        top: 14px;
+        left: 353px;
+      }
+
+      .list-tab a:nth-child(3) {
+        width: 280px;
+        position: absolute;
+        top: 14px;
+        left: 835px;
+      }
+
+      .list-tab a:nth-child(4) {
+        width: 333px;
+        position: absolute;
+        top: 84px;
+        left: 165px;
+      }
+
+      .list-tab a:nth-child(5) {
+        width: 280px;
+        position: absolute;
+        top: 84px;
+        left: 659px;
+      }
+
+      .list-tab a:nth-child(6) {
+        width: 280px;
+        position: absolute;
+        top: 84px;
+        left: 996px;
+      }
+
+      .list-tab a.active {
+        background: #f0b639;
+        color: #fff;
+      }
+
+      .list-tab a:hover {
+        background: #f0b639;
+        color: #fff !important;
+        cursor: pointer;
+      }
+
+      .tabcontent {
+        margin-top: -550px;
+        animation: fadeEffect 0.2s;
+        position: relative;
+      }
+
+      .tabcontent::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: -13px;
+        width: 320px;
+        height: 650px;
+        z-index: 10;
+        background: url(./images/Khung.png) center center / cover no-repeat;
+      }
+
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* style the dots */
+
+      .tabcontent .tab-pagi {
+        position: absolute;
+        top: 0;
+        left: 434px;
+      }
+
+      .tabcontent .my-dot {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 15px 0;
+      }
+
+      .tabcontent .my-dot span {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #0060af;
+        margin: 0 !important;
+      }
+
+      .tabcontent .my-dot.active span {
+        background-color: #f0b639;
+        border: 2px solid #0060af;
+      }
+
+      .tabcontent .my-dot p {
+        color: #000;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px 30px;
+        text-align: left;
+        width: fit-content;
+      }
+
+      .tabcontent .my-dot.active p {
+        font-weight: 700;
+        background-color: #f0b639;
+        border-radius: 25px;
+      }
+
+      .owl-pc .owl-dots {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: fit-content;
+        position: absolute;
+        top: 12px;
+        left: 429px;
+        margin-top: 0 !important;
+      }
+
+      .owl-item .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      /* .owl-pc .owl-stage-outer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background: url(./images/Khung.png) center center / cover no-repeat;
+      } */
+
+      .owl-pc {
+        width: 295px;
+        height: 635px;
+        border-radius: 40px;
+        overflow: hidden;
+      }
+
+      /* end style dots */
+
+      .news {
+        width: 100%;
+        height: auto;
+        min-height: 698px;
+        border-bottom: 2px solid #0060af;
+      }
+
+      .news .container {
+        padding-top: 130px;
+        padding-bottom: 100px;
+      }
+
+      .card-img {
+        overflow: hidden;
+        border-radius: 15px;
+        width: 100%;
+        height: 250px;
+      }
+
+      .card-img img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      .card-header {
+        color: #0060af;
+
+        font-family: "Lato";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        margin: 20px 0;
+        min-height: 48px;
+      }
+
+      .card-content {
+        color: #000;
+
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        min-height: 66px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .btn-detail {
+        display: block;
+        margin: 50px auto 0;
+        width: 150px;
+        height: 40px;
+        border-radius: 20px;
+        background: #ffe768;
+        color: #000;
+
+        font-family: "Lato";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+        text-align: center;
+      }
+
+      .btn-detail:hover {
+        background: #0060af;
+
+        color: #ffffff;
+      }
+
+      .register {
+        width: 100%;
+        height: auto;
+        min-height: 584px;
+        border-bottom: 2px solid #0060af;
+      }
+
+      .register .container {
+        padding: 150px 10px 100px 10px;
+      }
+
+      .register-header {
+        width: 420px;
+        height: 76px;
+        background-color: #ffe768;
+        color: #000000;
+        color: #000;
+        border-radius: 15px;
+        text-align: center;
+        font-family: "Lato";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 76px;
+        letter-spacing: 0.48px;
+        text-transform: uppercase;
+        margin: 0 auto 40px;
+      }
+
+      .input-container {
+        width: 100%;
+        max-width: 750px;
+        min-height: 362px;
+        height: auto;
+        border-radius: 20px;
+        border: 1px solid #d9d9d9;
+        background: #fff;
+        padding: 20px;
+        margin: 0 auto;
+      }
+
+      .form .input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .form .input-wrapper:last-child {
+        margin: 0;
+      }
+
+      .form label {
+        color: #000;
+
+        font-family: "Lato";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        min-width: 150px;
+      }
+
+      .form input,
+      .form select {
+        width: 100%;
+        height: 42px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 96, 175, 0.5);
+        background: rgba(169, 208, 255, 0.2);
+        flex: 1;
+        padding: 5px 10px;
+        -webkit-appearance: menulist;
+        outline: none;
+      }
+
+      .form-select:focus {
+        box-shadow: unset;
+      }
+
+      .btn-submit {
+        display: block;
+        max-width: 420px;
+        width: 100%;
+        height: 76px;
+        border-radius: 10px;
+        background: linear-gradient(0deg, #f0b639 0%, #ffe768 100%);
+        color: #000;
+        text-align: center;
+        font-family: "Lato";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 76px;
+        letter-spacing: 0.48px;
+        text-transform: uppercase;
+        margin: 40px auto 0;
+      }
+
+      /* css footer */
+      #footer > .container {
+        background: #fff;
+        padding: 35px 20px 30px 60px;
+        border-top: 1px solid #e9e9e9;
+        font-family: "Lato";
+      }
+
+      .tt-footer-2 {
+        font-size: 14px;
+        color: #3d3c3c;
+        font-weight: 600;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        text-align: left;
+      }
+
+      .tt-footer-2 {
+        font-size: 14px;
+        color: #3d3c3c;
+        font-weight: 600;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+      }
+
+      hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #000;
+      }
+
+      .tt-footer1 {
+        font-size: 15px;
+        color: #3d3c3c;
+        font-weight: 300;
+        line-height: 21px;
+        margin-bottom: 15px;
+      }
+
+      .ct-ft-1 {
+        font-size: 14px;
+        color: #3d3c3c;
+      }
+
+      .ct-ft-1 p {
+        margin-bottom: 3px;
+      }
+
+      b {
+        font-weight: 700;
+      }
+
+      .ct-ft-1 small {
+        font-size: 14px;
+        color: #3d3c3c;
+        margin-top: 9px;
+        display: inline-block;
+      }
+
+      small .tt_xdong {
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      small a {
+        margin-right: 10px;
+      }
+
+      small img {
+        width: 60px;
+        vertical-align: baseline;
+      }
+
+      .list_ungdung_ud {
+        display: flex;
+        overflow: hidden;
+        text-align: center;
+        align-items: center;
+        justify-content: left;
+      }
+      .lazyloaded {
+        vertical-align: middle;
+      }
+
+      .list_ungdung_ud li {
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .list_ungdung_ud li a {
+        display: block;
+      }
+
+      .list_ketnoi_ud li {
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .list_ketnoi_ud li a img {
+        width: 27px;
+      }
+
+      .lt_nn_ft_ud {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        color: #3d3c3c;
+        margin-top: 20px;
+      }
+
+      .lt_nn_ft_ud a {
+        display: inline-block;
+        margin-left: 15px;
+      }
+
+      .lt_nn_ft_ud a img {
+        vertical-align: baseline;
+        width: 27px;
+      }
+
+      ul.introduce-list li a {
+        line-height: 21px;
+      }
+
+      ul.introduce-list li a:hover {
+        color: #285594;
+      }
+
+      .right {
+        position: fixed;
+        right: 30px;
+        top: 200px;
+        z-index: 10;
+      }
+
+      .btn-dktv {
+        display: block;
+        width: 147px;
+        height: 61px;
+        border-radius: 10px;
+        border: 1px solid #d9d9d9;
+
+        background: #ffe768;
+
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: #000;
+
+        text-align: center;
+        -webkit-text-stroke-width: 1;
+        -webkit-text-stroke-color: #d9d9d9;
+        font-family: Lato;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .btn-dktv:hover {
+        cursor: pointer;
+      }
+
+      .menu-mb,
+      .list-menu-mb {
+        display: none;
+      }
+
+      .owl-solution {
+        display: none !important;
+      }
+
+      .guide-wrapper-mb {
+        display: none;
+      }
+
+      .owl-mb .item p {
+        color: #000;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center;
+      }
+
+      .owl-mb .owl-item .item img {
+        width: 295px !important;
+        height: auto;
+        margin-bottom: 20px;
+        margin: 40px auto;
+      }
+
+      .owl-theme .owl-dots .owl-dot span {
+        background-color: #696969;
+      }
+
+      .owl-theme .owl-dots .owl-dot.active span,
+      .owl-theme .owl-dots .owl-dot:hover span {
+        background: #f0b639;
+      }
+
+      .owl-nav {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 30%;
+      }
+
+      .owl-nav span {
+        font-size: 80px;
+      }
+
+      .nav-scroll {
+        width: 100%;
+        height: 100px;
+        background-color: #ffffff;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        display: none;
+        -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.07);
+        -webkit-animation: translateHeader 0.8s;
+        animation: translateHeader 0.8s;
+      }
+
+      @keyframes translateHeader {
+        0% {
+          opacity: 0;
+          -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+        }
+        100% {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+
+      .nav-scroll .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-scroll .list-menu {
+        color: #000;
+      }
+
+      .nav-scroll .list-menu a:hover,
+      .nav-scroll .list-menu a.active {
+        color: #000 !important;
+        font-weight: bold;
+        border-bottom: none;
+      }
+      .logo-scroll {
+        width: 220px;
+        height: auto;
+      }
+
+      .intro .container {
+        padding-top: 130px;
+      }
+
+      .intro .category {
+        display: flex;
+      }
+
+      .cate-header {
+        width: 100%;
+        height: 53px;
+        border-radius: 30px;
+        border: 1px solid #f0b639;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        color: #0060af;
+        font-family: "Lato";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .cate-header span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 53px;
+        height: 53px;
+        background-color: #f0b639;
+        border-radius: 30px;
+        margin-bottom: -1px;
+        margin-top: -1px;
+        margin-right: 10px;
+      }
+
+      .cate-list {
+        width: 100%;
+      }
+
+      .cate-list li {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dotted #696969;
+        color: #000;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        transition: padding 0.3s ease, background 0.3s ease;
+      }
+
+      .cate-list li:hover {
+        cursor: pointer;
+        padding: 10px;
+        background: rgba(169, 208, 255, 0.5);
+      }
+
+      .cate-list li span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 5px;
+        background: rgba(217, 217, 217, 0.5);
+        margin-right: 15px;
+      }
+
+      .cate-list li:hover span {
+        background-color: #fff;
+      }
+
+      .cate-list li:hover span svg path {
+        stroke: #0060af;
+      }
+
+      .cate-content .col1 {
+        padding-right: 30px;
+      }
+      .cate-content .col2 {
+        padding-left: 30px;
+      }
+
+      .cate-img-container {
+        height: 538px;
+        width: 538px;
+        margin-right: 50px;
+        border-radius: 30px;
+        overflow: hidden;
+      }
+
+      .cate-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.05s ease; /* Smooth transition effect on opacity */
+      }
+
+      .cate-img-container img.hidden {
+        opacity: 0; /* Fade-out effect */
+      }
+
+      .cate-content-container {
+        flex: 1;
+      }
+
+      .solution-2 {
+        position: relative;
+        width: 100%;
+      }
+
+      .bg-giaiphap {
+        display: block;
+        width: 1266px;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 200px;
+        padding-bottom: 200px;
+      }
+
+      .sln-img {
+        position: absolute;
+        transition: transform 0.3s ease;
+      }
+
+      .img-gp1 {
+        left: -53px;
+        top: 284px;
+      }
+
+      .img-gp2 {
+        left: 330px;
+        top: 136px;
+      }
+
+      .img-gp3 {
+        left: 600px;
+        top: 396px;
+      }
+
+      .img-gp4 {
+        left: 849px;
+        top: 187px;
+      }
+
+      .img-gp5 {
+        left: 1215px;
+        top: 354px;
+      }
+
+      .sln {
+        width: fit-content;
+        transition: transform 0.3s ease;
+      }
+
+      .sln-num {
+        color: #f0b639;
+        font-family: "Madimi One";
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+
+      .sln-header {
+        color: #0060af;
+        font-family: "Lato";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+
+      .sln-txt {
+        color: #000;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .sln-1 {
+        position: absolute;
+        left: -53px;
+        top: 0px;
+      }
+
+      .sln-2 {
+        text-align: right;
+        position: absolute;
+        left: 90px;
+        top: 352px;
+      }
+
+      .sln-3 {
+        position: absolute;
+        left: 523px;
+        top: 0px;
+      }
+
+      .sln-4 {
+        position: absolute;
+        left: 822px;
+        top: 377px;
+      }
+
+      .sln-5 {
+        position: absolute;
+        right: -100px;
+        top: 0px;
+      }
+
+      .zoom1 {
+        transform: scale(1.2);
+      }
+
+      .zoom2 {
+        transform: scale(1.1);
+      }
+
+      .policy {
+        margin-top: -60px;
+      }
+
+      .policy-container {
+        width: 100%;
+        max-width: 1216px;
+        margin: 0 auto;
+        padding-top: 130px;
+        padding-bottom: 100px;
+      }
+
+      .pol-item {
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .pol-item img {
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+      .pol-item p {
+        color: #000;
+        text-align: center;
+        font-family: "Lato";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .center-pol-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+      }
+
+      .center-pol-item p {
+        color: #0060af;
+        text-align: center;
+        font-family: "Lato";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .center-pol-item span {
+        color: #3e3e3e;
+        text-align: center;
+        font-family: "Madimi One";
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: relative;
+      }
+
+      .center-pol-item span img {
+        position: absolute;
+        z-index: -1;
+        top: -40px;
+        left: -40px;
+      }
+
+      .center-pol-item p.under-txt {
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h3 span {
+        display: none;
+      }
+
+      .sln-item-mb {
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .sln-item-mb img {
+        margin-bottom: 20px;
+      }
+
+      .solution-2-mobile {
+        display: none;
+      }
+
+      .btn-download-mb {
+        position: fixed;
+        z-index: 1000;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 296px;
+        height: 60px;
+        border-radius: 10px;
+        background: linear-gradient(0deg, #f0b639 0%, #ffe768 100%);
+        color: #000;
+        text-align: center;
+        font-family: "Lato";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: center;
+        display: none;
+      }
+
+      #tab-mb-holder {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: 56px;
+        color: #000;
+        text-align: center;
+        font-family: "Lato";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 30px;
+        background: #f0b639;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0 auto;
+      }
+
+      /* responsive */
+      @media (max-width: 1650px) {
+        .guide-wrapper {
+          scale: 0.8;
+        }
+
+        .solution-2 {
+          scale: 0.85;
+        }
+
+        .guide h3 {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (max-width: 1400px) {
+        .d-none-1400 {
+          display: none;
+        }
+        .cate-img-container {
+          width: 400px;
+          height: 400px;
+        }
+
+        .category {
+          align-items: center;
+        }
+
+        .guide-wrapper {
+          scale: 0.7;
+          margin-left: -120px;
+        }
+
+        .solution-2 {
+          scale: 0.7;
+          margin-left: -70px;
+        }
+
+        .sln-5 {
+          right: -297px !important;
+        }
+
+        /* .sln-header{} */
+
+        .owl-dots {
+          gap: 5px;
+        }
+
+        .solution {
+          background-size: contain;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .cate-img-container {
+          width: 350px;
+          height: 350px;
+          margin-right: 20px;
+        }
+
+        .cate-header {
+          font-size: 16px;
+        }
+
+        .cate-list li {
+          font-size: 14px;
+        }
+
+        .guide-wrapper {
+          scale: 0.65;
+          margin-left: -220px;
+          margin-top: -50px;
+        }
+
+        .list-menu a {
+          margin-left: 0;
+          font-size: 16px;
+        }
+
+        .list-menu button {
+          font-size: 16px;
+          width: 150px;
+          height: 40px;
+          margin-left: 20px;
+        }
+
+        h3 {
+          font-size: 36px;
+        }
+
+        .solution-2 {
+          scale: 0.67;
+          margin-left: -145px;
+        }
+
+        .sln-5 {
+          right: -490px !important;
+        }
+
+        .sln {
+          width: max-content !important;
+          max-width: 350px;
+        }
+
+        .pol-item p {
+          font-size: 20px;
+        }
+
+        .center-pol-item p {
+          font-size: 36px;
+        }
+
+        .center-pol-item p.under-txt {
+          font-size: 30px;
+        }
+
+        .center-pol-item img {
+          left: 15px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .cate-list li {
+          font-size: 16px;
+        }
+
+        .cate-header {
+          font-size: 20px;
+        }
+
+        .solution-2-mobile {
+          display: block;
+        }
+
+        h3 {
+          font-size: 32px;
+        }
+
+        h3 br {
+          display: none;
+        }
+
+        h3 span {
+          display: inline-block;
+        }
+
+        .solution-2 {
+          display: none;
+        }
+
+        .owl-item .item img.img-pc {
+          display: none;
+        }
+
+        .owl-item .item img.img-tablet {
+          display: block;
+        }
+
+        .cate-img-container {
+          display: none;
+        }
+
+        .guide-wrapper {
+          display: none;
+        }
+
+        .guide h3 {
+          margin-bottom: 30px;
+        }
+
+        .guide-wrapper-mb {
+          display: block;
+        }
+
+        .list-tab-mb {
+          position: absolute;
+          left: 50%;
+          z-index: 10;
+          transform: translateX(-50%);
+          display: none;
+          flex-direction: column;
+          border-radius: 10px;
+          background: #fff;
+          /* shadow1 */
+          box-shadow: 4px 8px 20px 0px rgba(0, 0, 0, 0.15);
+          width: calc(100% - 20px);
+          max-width: 400px;
+        }
+
+        .list-tab-mb a {
+          color: #3e3e3e;
+
+          text-align: left;
+          font-family: "Lato";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          display: block;
+          padding: 15px 20px;
+        }
+
+        .list-tab-mb a:first-child {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        .list-tab-mb a:last-child {
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+        .list-tab-mb a:not(:last-child) {
+          border-bottom: 1px dotted #696969;
+        }
+
+        .list-tab-mb a.active,
+        .list-tab-mb a:hover {
+          background: #f0b639;
+          color: #fff;
+        }
+
+        .list-menu {
+          display: none;
+        }
+
+        .right {
+          scale: 0.7;
+          right: 0;
+          display: none;
+        }
+
+        .menu-mb {
+          display: block;
+          width: 30px;
+        }
+
+        .list-menu-mb {
+          width: 163px;
+          border-radius: 10px;
+          background: #d9d9d9;
+          position: absolute;
+          right: 14px;
+          top: 75px;
+          z-index: 1000;
+        }
+
+        .nav-scroll .list-menu-mb {
+          right: 80px;
+          top: 70px;
+        }
+
+        .list-menu-mb a {
+          display: block;
+          padding: 10px;
+          text-align: right;
+          color: var(--xam, #696969) !important;
+
+          text-align: right;
+          font-family: "Lato";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .list-menu-mb a:first-child {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        .list-menu-mb a:last-child {
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+        .list-menu-mb a:hover,
+        .list-menu-mb a.active {
+          color: var(--xam, #0060af) !important;
+          font-weight: 700;
+          background: #fff;
+        }
+
+        .btn-detail {
+          margin-top: 15px;
+          margin-bottom: 100px;
+        }
+
+        #footer > .container {
+          padding: 35px 20px 30px;
+        }
+
+        .solution .row {
+          display: none;
+        }
+
+        .owl-solution {
+          display: block !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .cate-header {
+          margin-top: 50px;
+        }
+        .qr-taingay {
+          display: none;
+        }
+        .btn-download-mb {
+          display: flex;
+        }
+        .pol-item p {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .list-menu-mb {
+          top: 50px;
+        }
+
+        .nav {
+          height: 65px;
+        }
+
+        h3 {
+          font-size: 28px;
+        }
+
+        .sln-header {
+          font-size: 24px;
+        }
+
+        .owl-item .item img.img-tablet {
+          display: none;
+        }
+        .owl-item .item img.img-mobile {
+          display: block;
+        }
+
+        .banner {
+          min-height: unset;
+        }
+        h2 {
+          text-align: left;
+          font-weight: 400;
+          font-size: 40px;
+          margin-bottom: 20px;
+        }
+
+        h2 span {
+          font-size: 60px;
+        }
+
+        .banner-txt {
+          font-weight: 400;
+        }
+
+        .btn-more {
+          width: 144px;
+          height: 39px;
+          border-radius: 27px;
+          background: #ffe768;
+
+          box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+          color: #000;
+
+          text-align: center;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 39px;
+          letter-spacing: 0.24px;
+          margin: 0 auto;
+        }
+
+        .h3 {
+          font-size: 28px;
+        }
+
+        .register-header {
+          width: 304px;
+          height: 50px;
+          border-radius: 32px;
+          background: #f0b639;
+          font-size: 28px;
+          line-height: 50px;
+        }
+
+        .form label {
+          font-size: 16px;
+          min-width: 110px;
+        }
+
+        .btn-submit {
+          font-size: 20px;
+          width: 180px;
+          height: 40px;
+          line-height: 40px;
+        }
+
+        .tt-footer-2 {
+          margin-top: 20px;
+        }
+
+        .logo-scroll {
+          width: 145px;
+        }
+
+        .logo {
+          width: 145px;
+        }
+
+        .btn-more {
+          margin-left: 0;
+          margin-top: 150px;
+        }
+
+        h3 {
+          font-size: 30px;
+        }
+
+        .solution {
+          background: unset;
+        }
+
+        .solution .container {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .input-container {
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <!-- <div class="right">
+      <a href><img src="./images/free.png" /></a>
+      <a href="#register" class="btn-dktv"
+        >đăng ký <br />
+        tư vấn</a
+      >
+    </div> -->
+
+    <!-- <div class="nav-scroll">
+      <div class="container">
+        <a href="#banner"
+          ><img class="logo-scroll" src="./images/LogoVTCPOS-scroll.png"
+        /></a>
+        <div class="list-menu">
+          <a href="#solution">Giới thiệu</a>
+          <a href="#guide">Hướng dẫn</a>
+          <a href="#news">Tin tức</a>
+          <a href="#register">Đăng ký tư vấn</a>
+        </div>
+        <img class="menu-mb" src="./images/menu-burger-scroll.png" />
+        <div class="list-menu-mb" style="display: none;right: 12px;">
+          <a>Trang chủ</a>
+          <a href="#solution">Giới thiệu</a>
+          <a href="#guide">Hướng dẫn</a>
+          <a href="#news">Tin tức</a>
+          <a href="#register">Đăng ký tư vấn</a>
+        </div>
+      </div>
+    </div> -->
+
+    <a class="btn-download-mb">tải app NGAY</a>
+
+    <div class="nav">
+      <div class="container">
+        <img class="logo" src="./images/logo-VTCpos-new.png" />
+        <div class="list-menu">
+          <a href="#intro">Giới thiệu</a>
+          <a href="#policy">Chính sách</a>
+
+          <a href="#guide">Hướng dẫn</a>
+          <a href="#news">Tin tức</a>
+          <a href="#register"> Đăng ký ngay</a>
+        </div>
+        <img class="menu-mb" src="./images/menu-burger-scroll.png" />
+        <div class="list-menu-mb">
+          <a href="#intro">Giới thiệu</a>
+          <a href="#policy">Chính sách</a>
+          <a href="#guide">Hướng dẫn</a>
+          <a href="#news">Tin tức</a>
+          <a href="#register"> Đăng ký ngay</a>
+        </div>
+      </div>
+    </div>
+
+    <a class="qr-taingay" href><img src="./images/qr-taingay.png" /></a>
+
+    <div class="banner" id="banner">
+      <div class="owl-carousel owl-theme owl-banner">
+        <div class="item">
+          <img class="img-pc" src="./images/1920x810-1.png" /><img
+            class="img-tablet"
+            src="./images/860x1200-1.png"
+          /><img class="img-mobile" src="./images/430x600-1.png" />
+        </div>
+        <div class="item">
+          <img class="img-pc" src="./images/1920x810-2.png" /><img
+            class="img-tablet"
+            src="./images/860x1200-2.png"
+          /><img class="img-mobile" src="./images/430x600-2.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="intro" id="intro">
+      <div class="container">
+        <h3>ĐƯỢC SỬ DỤNG CHO CÁC NGÀNH HÀNG</h3>
+        <div class="category">
+          <div class="cate-img-container">
+            <img src="./images/a1.jpg" />
+          </div>
+          <div class="cate-content-container">
+            <div class="row">
+              <div class="col1 col-12 col-md-6">
+                <div class="cate-header">
+                  <span><img src="./images/heart-attack 1.png" /></span>
+                  Làm đẹp, thể thao, sức khỏe
+                </div>
+
+                <ul class="cate-list">
+                  <li>
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="27"
+                        height="13"
+                        viewBox="0 0 27 13"
+                        fill="none"
+                      >
+                        <path
+                          d="M8.17331 1H5.03499C4.85663 1 4.68558 1.07085 4.55946 1.19697C4.43334 1.32309 4.36249 1.49414 4.36249 1.6725V11.5358C4.36249 11.6241 4.37988 11.7116 4.41368 11.7932C4.44748 11.8748 4.49701 11.9489 4.55946 12.0113C4.62191 12.0738 4.69604 12.1233 4.77763 12.1571C4.85922 12.1909 4.94667 12.2083 5.03499 12.2083H8.17331C8.26163 12.2083 8.34908 12.1909 8.43067 12.1571C8.51226 12.1233 8.5864 12.0738 8.64884 12.0113C8.71129 11.9489 8.76083 11.8748 8.79462 11.7932C8.82842 11.7116 8.84581 11.6241 8.84581 11.5358V1.6725C8.84581 1.49414 8.77496 1.32309 8.64884 1.19697C8.52272 1.07085 8.35167 1 8.17331 1ZM21.6233 1H18.485C18.3066 1 18.1356 1.07085 18.0094 1.19697C17.8833 1.32309 17.8125 1.49414 17.8125 1.6725V11.5358C17.8125 11.6241 17.8299 11.7116 17.8637 11.7932C17.8975 11.8748 17.947 11.9489 18.0094 12.0113C18.0719 12.0738 18.146 12.1233 18.2276 12.1571C18.3092 12.1909 18.3966 12.2083 18.485 12.2083H21.6233C21.7116 12.2083 21.7991 12.1909 21.8806 12.1571C21.9622 12.1233 22.0364 12.0738 22.0988 12.0113C22.1613 11.9489 22.2108 11.8748 22.2446 11.7932C22.2784 11.7116 22.2958 11.6241 22.2958 11.5358V1.6725C22.2958 1.49414 22.2249 1.32309 22.0988 1.19697C21.9727 1.07085 21.8016 1 21.6233 1Z"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M8.84582 6.60413H17.8125M1 9.29413V3.91414C1 3.73578 1.07085 3.56473 1.19697 3.43861C1.32309 3.31249 1.49414 3.24164 1.6725 3.24164H3.69C3.86835 3.24164 4.03941 3.31249 4.16552 3.43861C4.29164 3.56473 4.36249 3.73578 4.36249 3.91414V9.29413C4.36249 9.47248 4.29164 9.64354 4.16552 9.76966C4.03941 9.89577 3.86835 9.96663 3.69 9.96663H1.6725C1.49414 9.96663 1.32309 9.89577 1.19697 9.76966C1.07085 9.64354 1 9.47248 1 9.29413ZM25.6583 9.29413V3.91414C25.6583 3.73578 25.5874 3.56473 25.4613 3.43861C25.3352 3.31249 25.1641 3.24164 24.9858 3.24164H22.9683C22.7899 3.24164 22.6189 3.31249 22.4928 3.43861C22.3666 3.56473 22.2958 3.73578 22.2958 3.91414V9.29413C22.2958 9.47248 22.3666 9.64354 22.4928 9.76966C22.6189 9.89577 22.7899 9.96663 22.9683 9.96663H24.9858C25.1641 9.96663 25.3352 9.89577 25.4613 9.76966C25.5874 9.64354 25.6583 9.47248 25.6583 9.29413Z"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                    ></span>
+                    Phòng tập
+                  </li>
+                  <li>
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 26 26"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M3.01382 12.1604L3.44282 11.8766C4.08632 11.4509 4.51207 11.1681 4.81324 10.9157C5.09924 10.6763 5.20757 10.5159 5.26391 10.3664C5.32024 10.2169 5.34624 10.0252 5.29099 9.65577C5.23249 9.26577 5.10141 8.77285 4.90207 8.02644L4.72116 7.34935C3.74419 8.77731 3.15579 10.435 3.01382 12.1594M5.99299 5.83269L6.01899 5.91285L6.48374 7.64835C6.66791 8.33952 6.82499 8.92344 6.89757 9.41527C6.93549 9.66769 6.95499 9.9136 6.94307 10.1595L9.65141 11.3003C9.71287 11.2386 9.77798 11.1807 9.84641 11.1269L11.8376 9.60594C11.9445 9.52432 12.0571 9.45571 12.1756 9.4001V6.46427C11.9467 6.38305 11.7261 6.28002 11.5169 6.1566C11.0857 5.90852 10.5993 5.54994 10.0252 5.12527L8.53232 4.0246C7.59713 4.49224 6.74043 5.1026 5.99299 5.83377M10.3339 3.3356L10.9536 3.79277C11.5743 4.25102 11.986 4.55327 12.3272 4.74935C12.6501 4.9346 12.8364 4.98119 12.9967 4.98335C13.156 4.98444 13.3434 4.94219 13.6706 4.76344C14.0151 4.57494 14.4332 4.28135 15.0637 3.83719L15.7376 3.36269C14.8435 3.10721 13.918 2.97813 12.9881 2.97919C12.0913 2.97805 11.1986 3.09794 10.3339 3.3356ZM17.5337 4.0701C17.5013 4.1011 17.4669 4.13004 17.4308 4.15677L15.964 5.19027C15.379 5.60194 14.8861 5.95077 14.4506 6.1891C14.2372 6.3061 14.0216 6.40577 13.8006 6.47835V9.4001C13.9183 9.45644 14.0306 9.52541 14.1375 9.60702L16.1276 11.1291C16.1991 11.1833 16.2655 11.2418 16.3269 11.3046L19.1002 10.1563C19.0894 9.91252 19.1089 9.66769 19.1468 9.41635C19.2194 8.92452 19.3765 8.3406 19.5607 7.65052L20.0254 5.91502L20.0341 5.8836C19.2988 5.15418 18.4554 4.54249 17.5337 4.0701ZM21.3037 7.42302L21.1423 8.02644C20.943 8.77285 20.8119 9.26685 20.7534 9.65577C20.6992 10.0241 20.7242 10.2169 20.7805 10.3664C20.8368 10.5159 20.9452 10.6763 21.2312 10.9157C21.5323 11.1681 21.957 11.4509 22.6016 11.8766L22.9569 12.1117C22.8108 10.4342 22.242 8.82117 21.3037 7.42302ZM24.6133 13.4355C24.6184 13.2911 24.6209 13.1459 24.6209 13C24.6209 6.56935 19.4133 1.35419 12.9881 1.35419C6.56174 1.35419 1.35416 6.56935 1.35416 13C1.35416 19.4307 6.56174 24.6459 12.9881 24.6459C19.0818 24.6459 24.0792 19.955 24.5797 13.9859C24.6544 13.8118 24.667 13.6171 24.6133 13.4355ZM22.9407 14.0498L21.6667 13.2059C21.0708 12.8126 20.566 12.48 20.1857 12.1594C20.0061 12.0113 19.84 11.8474 19.6896 11.6697L16.8588 12.8419C16.8444 12.9607 16.8201 13.0781 16.7862 13.1929L16.0052 15.7246C15.9777 15.8134 15.9445 15.8987 15.9055 15.9803L17.4958 17.8198C17.7396 17.7385 17.9942 17.6898 18.2585 17.6594C18.7525 17.6031 19.357 17.6031 20.0709 17.6031H21.8779C22.4511 16.4952 22.8112 15.2895 22.9396 14.0487M20.826 19.2281H20.1153C19.3429 19.2281 18.8327 19.2292 18.4427 19.2736C18.0732 19.3169 17.8945 19.3895 17.7656 19.4838C17.6356 19.5769 17.5088 19.7221 17.3517 20.0612C17.186 20.4187 17.0235 20.9029 16.7797 21.6353L16.5349 22.3719C18.2217 21.7291 19.7038 20.6429 20.8249 19.2281M14.6499 22.8811L15.2512 21.0795C15.4765 20.4003 15.6682 19.8272 15.8773 19.3765C15.9705 19.1736 16.077 18.9829 16.1969 18.8045L14.6434 17.0062C14.4975 17.043 14.3473 17.0614 14.1927 17.0614H11.7769C11.6325 17.0614 11.4923 17.0459 11.3566 17.0149L9.97749 18.7764C10.106 18.962 10.2191 19.1624 10.3166 19.3776C10.5267 19.8283 10.7174 20.4014 10.9438 21.0806L11.5559 22.919C12.5844 23.0666 13.6295 23.0542 14.6542 22.8822M9.69257 22.4651L9.41741 21.6364C9.17257 20.904 9.01007 20.4187 8.84432 20.0623C8.68724 19.7243 8.56049 19.578 8.43157 19.4849C8.30157 19.3906 8.12391 19.3169 7.75449 19.2747C7.36449 19.2314 6.85316 19.2292 6.08182 19.2292H5.14582C6.32425 20.7158 7.90005 21.8379 9.69041 22.4651M4.11124 17.6334C4.18264 17.6144 4.25618 17.6046 4.33007 17.6042H6.12407C6.83907 17.6042 7.44249 17.6042 7.93649 17.6605C8.19107 17.6898 8.43482 17.7353 8.66882 17.8111L10.0815 16.0106C10.0369 15.9184 9.99888 15.8232 9.96774 15.7257L9.18666 13.1939C9.15221 13.0778 9.12756 12.9589 9.11299 12.8386L6.35049 11.674C6.20064 11.8509 6.03532 12.014 5.85649 12.1615C5.47516 12.48 4.97141 12.8126 4.37557 13.2069L3.03657 14.092C3.17416 15.3595 3.54574 16.5544 4.11016 17.6345M12.9848 10.8431C12.926 10.8437 12.8689 10.8635 12.8223 10.8994L10.8333 12.4194C10.7892 12.453 10.7565 12.4995 10.7396 12.5524C10.7228 12.6053 10.7226 12.6621 10.7391 12.7151L11.5212 15.2469C11.5383 15.3018 11.5723 15.3499 11.6185 15.3841C11.6646 15.4184 11.7205 15.4371 11.778 15.4375H14.1938C14.2515 15.4373 14.3076 15.4187 14.354 15.3844C14.4004 15.3502 14.4346 15.3019 14.4517 15.2469L15.2338 12.7151C15.2503 12.6621 15.2501 12.6053 15.2333 12.5524C15.2164 12.4995 15.1837 12.453 15.1396 12.4194L13.1495 10.8973C13.1026 10.8621 13.0456 10.8431 12.987 10.8431"
+                          fill="black"
+                          fill-opacity="0.6"
+                        /></svg
+                    ></span>
+                    Sân bóng
+                  </li>
+                  <li>
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="20"
+                        viewBox="0 0 22 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M16.6813 9.16227C16.5332 7.53782 16.0397 5.96376 15.2339 4.54555C14.428 3.12734 13.3283 1.89773 12.0085 0.939091L10.7117 0L9.49645 0.945C8.23033 1.92937 7.18611 3.16977 6.43201 4.58518C5.6779 6.00058 5.23088 7.55916 5.12014 9.15909C4.63094 9.06683 4.13419 9.02043 3.63636 9.0205H0V12C0 16.4112 3.58877 20 8 20H13.8182C18.2294 20 21.8182 16.4112 21.8182 12V9.0205H18.1818C17.6783 9.02043 17.1759 9.0679 16.6813 9.16227ZM10.3895 2.09318L10.7429 1.81818L11.1556 2.11705C12.3458 2.98165 13.3304 4.0985 14.0388 5.38778C14.7473 6.67706 15.1622 8.10693 15.2539 9.57518C13.3306 10.3372 11.7746 11.8106 10.9091 13.6896C10.0418 11.8071 8.48154 10.3319 6.55345 9.57141C6.60424 8.11966 6.9743 6.69693 7.6373 5.40441C8.3003 4.1119 9.23996 2.98135 10.3895 2.09318ZM10.1818 18.5455H8C4.39091 18.5455 1.45455 15.6091 1.45455 12V10.475H3.63636C7.24545 10.475 10.1818 13.4114 10.1818 17.0205V18.5455ZM20.3636 12C20.3636 15.6091 17.4273 18.5455 13.8182 18.5455H11.6364V17.0205C11.6364 13.4114 14.5727 10.475 18.1818 10.475H20.3636V12Z"
+                          fill="black"
+                          fill-opacity="0.6"
+                        />
+                      </svg>
+                    </span>
+                    Chuỗi Spa, nail
+                  </li>
+                  <li>
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="22"
+                        viewBox="0 0 16 22"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.3036 2.9321H10.2452C9.69254 2.93386 9.71321 3.75754 10.2452 3.7527H13.3036V4.17378H10.2452C9.69561 4.16894 9.71586 4.99218 10.2452 4.99438H13.3036V5.4247H10.2452C9.69561 5.4247 9.71586 6.2475 10.2452 6.2453H13.3036V6.65538H10.2452C9.70706 6.65934 9.71586 7.48302 10.2452 7.48566H13.3036V7.89662H10.2452C9.70706 7.89486 9.70485 8.71722 10.2452 8.71722H13.3036V9.1273H10.2452C9.70706 9.12906 9.70485 9.9523 10.2452 9.94834H13.3036V10.3685H10.2452C9.70706 10.3637 9.70485 11.1861 10.2452 11.1891H13.3036V11.5983H10.2452C9.70706 11.5979 9.71586 12.422 10.2452 12.4194H13.3036V20.4093C13.3054 21.6268 15.1547 21.6048 15.16 20.4093V1.71154C15.1547 1.15538 14.698 0.452261 13.9465 0.450061H10.2452C9.69254 0.450501 9.71321 1.27418 10.2452 1.27066L13.3036 1.28078V1.68998H10.2452C9.69341 1.68734 9.7141 2.51058 10.2452 2.51102H13.3036V2.9321ZM10.0349 17.0975C10.0331 15.6763 8.55998 14.1477 6.79998 15.1377V9.70194L5.6617 0.736941C5.63794 0.499781 5.43686 0.443901 5.30178 0.439941C5.1623 0.443901 4.8829 0.499781 4.85254 0.736941L3.71998 9.70194V15.1377C1.95998 14.1477 0.534376 15.6859 0.533936 17.0865C0.534376 18.3325 1.49358 19.356 2.79158 19.3529C4.09926 19.356 5.03998 18.2089 5.03998 17.0865V11.4399H5.47998V17.0865C5.47998 18.3431 6.45326 19.2733 7.53478 19.3322C7.51674 20.0213 7.74157 21.0042 8.16486 21.3941C8.66117 21.8517 9.2521 21.2665 9.00966 20.7899C8.77558 20.3464 8.5459 20.0837 8.73246 19.1153C9.51214 18.7545 10.0331 17.9951 10.0349 17.0975ZM2.84174 18.2155C2.54504 18.2155 2.26049 18.0976 2.0507 17.8878C1.8409 17.678 1.72304 17.3935 1.72304 17.0968C1.72304 16.8001 1.8409 16.5156 2.0507 16.3058C2.26049 16.096 2.54504 15.9781 2.84174 15.9781C3.45158 15.9816 3.94834 16.4819 3.95274 17.0975C3.95171 17.3925 3.83455 17.6752 3.62662 17.8844C3.41869 18.0937 3.13671 18.2126 2.84174 18.2155ZM6.61298 17.0975C6.614 16.8023 6.73118 16.5193 6.93917 16.3099C7.14716 16.1004 7.42924 15.9812 7.72442 15.9781C8.01962 15.981 8.30179 16.1001 8.50976 16.3097C8.71773 16.5192 8.83473 16.8022 8.83542 17.0975C8.83496 17.3926 8.71799 17.6757 8.50993 17.885C8.30188 18.0944 8.01957 18.2132 7.72442 18.2155C7.42936 18.2127 7.14728 18.0938 6.93925 17.8846C6.73122 17.6753 6.614 17.3925 6.61298 17.0975Z"
+                          fill="black"
+                          fill-opacity="0.6"
+                        /></svg></span
+                    >Cắt tóc
+                  </li>
+                </ul>
+              </div>
+              <div class="col2 col-12 col-md-6">
+                <div class="cate-header">
+                  <span><img src="./images/shopping-bag (1) 1.png" /></span>
+                  Bán lẻ
+                </div>
+
+                <ul class="cate-list">
+                  <li>
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="24"
+                        viewBox="0 0 19 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M17.9842 21.9463C17.9821 21.9394 17.9793 21.9327 17.9758 21.9263L13.14 11.6253L15.3589 8.14105L15.3684 8.12632C15.5057 7.89735 15.5782 7.6354 15.5782 7.36842C15.5782 7.10145 15.5057 6.83949 15.3684 6.61053C15.361 6.5979 15.3526 6.58526 15.3442 6.57263L13.0516 3.29789V0.631579C13.0516 0.464074 12.985 0.303429 12.8666 0.184985C12.7481 0.0665412 12.5875 0 12.42 0C12.2525 0 12.0918 0.0665412 11.9734 0.184985C11.8549 0.303429 11.7884 0.464074 11.7884 0.631579V3.27579L11.1884 4.02526C10.932 4.34567 10.6068 4.60431 10.2369 4.78205C9.86706 4.95979 9.46194 5.05207 9.05157 5.05207C8.6412 5.05207 8.23608 4.95979 7.86619 4.78205C7.49631 4.60431 7.17113 4.34567 6.91472 4.02526L6.31473 3.27579V0.631579C6.31473 0.464074 6.24818 0.303429 6.12974 0.184985C6.0113 0.0665412 5.85065 2.50967e-08 5.68315 2.50967e-08C5.51564 2.50967e-08 5.355 0.0665412 5.23655 0.184985C5.11811 0.303429 5.05157 0.464074 5.05157 0.631579V3.29789L2.75894 6.57263C2.75051 6.58526 2.74209 6.5979 2.73472 6.61053C2.59742 6.83949 2.5249 7.10145 2.5249 7.36842C2.5249 7.6354 2.59742 7.89735 2.73472 8.12632L2.7442 8.14105L4.96315 11.6253L0.127357 21.9263C0.123868 21.9327 0.121046 21.9394 0.118935 21.9463C0.0230095 22.1704 -0.0158453 22.4147 0.00585053 22.6575C0.0275464 22.9003 0.109116 23.1339 0.243253 23.3374C0.37739 23.5409 0.559906 23.7079 0.774456 23.8236C0.989005 23.9392 1.22889 23.9998 1.47262 24H16.6305C16.8743 24 17.1143 23.9395 17.329 23.8239C17.5437 23.7084 17.7264 23.5413 17.8606 23.3378C17.9949 23.1343 18.0766 22.9006 18.0983 22.6578C18.1201 22.4149 18.0812 22.1705 17.9853 21.9463H17.9842ZM3.81578 7.47368C3.79856 7.44353 3.78907 7.40958 3.78815 7.37487C3.78724 7.34016 3.79492 7.30576 3.81051 7.27474L5.71683 4.55053L5.92736 4.81474C6.30211 5.28305 6.77738 5.66109 7.31799 5.92088C7.8586 6.18067 8.45072 6.31556 9.05051 6.31556C9.65031 6.31556 10.2424 6.18067 10.783 5.92088C11.3237 5.66109 11.7989 5.28305 12.1737 4.81474L12.3842 4.55053L14.2905 7.27263C14.3069 7.30322 14.3155 7.3374 14.3155 7.37211C14.3155 7.40682 14.3069 7.44099 14.2905 7.47158L12.08 10.9453H6.02946L3.81578 7.47368ZM16.8053 22.6421C16.7866 22.6717 16.7606 22.696 16.7298 22.7126C16.699 22.7292 16.6644 22.7375 16.6295 22.7368H1.47262C1.4384 22.7369 1.40467 22.7286 1.37437 22.7127C1.34407 22.6968 1.31809 22.6738 1.29871 22.6456C1.27932 22.6174 1.2671 22.5849 1.2631 22.5509C1.25911 22.5169 1.26346 22.4825 1.27578 22.4505L6.0842 12.2105H12.0189L16.8263 22.4505C16.839 22.4817 16.8438 22.5155 16.8401 22.549C16.8364 22.5824 16.8244 22.6145 16.8053 22.6421Z"
+                          fill="black"
+                          fill-opacity="0.6"
+                        /></svg></span
+                    >Thời trang
+                  </li>
+                  <li>
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="21"
+                        viewBox="0 0 23 21"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.74958 19.5614C8.21555 19.5614 8.59328 19.1837 8.59328 18.7177C8.59328 18.2518 8.21555 17.874 7.74958 17.874C7.28362 17.874 6.90588 18.2518 6.90588 18.7177C6.90588 19.1837 7.28362 19.5614 7.74958 19.5614Z"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M19.5614 19.5614C20.0274 19.5614 20.4051 19.1837 20.4051 18.7177C20.4051 18.2518 20.0274 17.874 19.5614 17.874C19.0955 17.874 18.7177 18.2518 18.7177 18.7177C18.7177 19.1837 19.0955 19.5614 19.5614 19.5614Z"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M1 1H4.3748L6.9059 15.3429H20.4051"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6.90591 11.9681H20.0592C20.1568 11.9682 20.2513 11.9345 20.3268 11.8726C20.4023 11.8108 20.454 11.7247 20.4731 11.6291L21.9918 4.03577C22.0041 3.97454 22.0026 3.91135 21.9874 3.85077C21.9723 3.79019 21.9439 3.73372 21.9043 3.68544C21.8647 3.63716 21.8149 3.59827 21.7584 3.57159C21.702 3.5449 21.6403 3.53108 21.5779 3.53113H5.21851"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                    ></span>
+                    Tạp hóa
+                  </li>
+                  <li>
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="22"
+                        viewBox="0 0 25 22"
+                        fill="none"
+                      >
+                        <path
+                          d="M21.2179 8.73381C20.6054 7.29526 19.6491 6.02907 18.433 5.04638C17.2168 4.06369 15.7781 3.39456 14.243 3.09771L15.6297 0.879004L14.2233 0L12.3935 2.92767C10.5297 2.93634 8.70918 3.49086 7.157 4.52272C5.60482 5.55458 4.38894 7.01857 3.65958 8.73381C2.68265 8.75238 1.75201 9.1535 1.06769 9.85096C0.383363 10.5484 0 11.4865 0 12.4636C0 13.4407 0.383363 14.3788 1.06769 15.0763C1.75201 15.7737 2.68265 16.1749 3.65958 16.1934C4.39202 17.9157 5.61488 19.3846 7.17591 20.417C8.73693 21.4495 10.5672 22 12.4387 22C14.3103 22 16.1406 21.4495 17.7016 20.417C19.2626 19.3846 20.4855 17.9157 21.2179 16.1934C22.1948 16.1749 23.1255 15.7737 23.8098 15.0763C24.4941 14.3788 24.8775 13.4407 24.8775 12.4636C24.8775 11.4865 24.4941 10.5484 23.8098 9.85096C23.1255 9.1535 22.1948 8.75238 21.2179 8.73381ZM22.6251 13.9153C22.2458 14.3033 21.7289 14.526 21.1864 14.5352L20.1123 14.5557L19.6918 15.5442C19.0868 16.9673 18.0765 18.1809 16.7869 19.034C15.4972 19.887 13.9851 20.3419 12.4388 20.3419C10.8925 20.3419 9.38035 19.887 8.09067 19.034C6.801 18.1809 5.79076 16.9673 5.18577 15.5442L4.76523 14.5557L3.6911 14.5352C3.14838 14.5251 2.63133 14.3024 2.25111 13.915C1.87089 13.5276 1.65789 13.0064 1.65789 12.4636C1.65789 11.9208 1.87089 11.3997 2.25111 11.0123C2.63133 10.6249 3.14838 10.4022 3.6911 10.392L4.76523 10.3716L5.18577 9.38301C5.79078 7.96001 6.80102 6.74641 8.0907 5.89334C9.38037 5.04027 10.8925 4.58541 12.4388 4.58541C13.9851 4.58541 15.4972 5.04027 16.7868 5.89334C18.0765 6.74641 19.0868 7.96001 19.6918 9.38301L20.1123 10.3716L21.1864 10.392C21.5912 10.3997 21.9849 10.5257 22.3188 10.7547C22.6527 10.9836 22.9122 11.3054 23.0653 11.6802C23.2183 12.055 23.2582 12.4664 23.18 12.8637C23.1018 13.2609 22.9089 13.6265 22.6251 13.9153Z"
+                          fill="black"
+                          fill-opacity="0.6"
+                        />
+                        <path
+                          d="M7.87787 10.3905H9.95099V12.4636H7.87787V10.3905ZM14.9265 10.3905H16.9996V12.4636H14.9265V10.3905ZM12.4387 18.2684C12.9832 18.2684 13.5224 18.1611 14.0254 17.9528C14.5285 17.7444 14.9856 17.439 15.3706 17.054C15.7556 16.669 16.061 16.2119 16.2694 15.7088C16.4777 15.2058 16.585 14.6666 16.585 14.1221H8.29249C8.29249 14.6666 8.39974 15.2058 8.60811 15.7088C8.81648 16.2119 9.12189 16.669 9.5069 17.054C10.2845 17.8315 11.3391 18.2684 12.4387 18.2684Z"
+                          fill="black"
+                          fill-opacity="0.6"
+                        /></svg></span
+                    >Mẹ & Bé
+                  </li>
+                  <li>
+                    <span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M21.4286 12H2.57143M21.4286 12C21.8453 12 22.245 11.8344 22.5397 11.5397C22.8344 11.245 23 10.8453 23 10.4286V8.85714C23 8.44037 22.8344 8.04068 22.5397 7.74598C22.245 7.45128 21.8453 7.28571 21.4286 7.28571H2.57143C2.15466 7.28571 1.75496 7.45128 1.46026 7.74598C1.16556 8.04068 1 8.44037 1 8.85714V10.4286C1 10.8453 1.16556 11.245 1.46026 11.5397C1.75496 11.8344 2.15466 12 2.57143 12M21.4286 12V19.8571C21.4286 20.6907 21.0974 21.4901 20.508 22.0795C19.9186 22.6689 19.1193 23 18.2857 23H5.71429C4.88075 23 4.08135 22.6689 3.49195 22.0795C2.90255 21.4901 2.57143 20.6907 2.57143 19.8571V12M12 7.28571V5.71429M12 7.28571H6.83629C6.48258 7.28571 6.13234 7.21605 5.80556 7.08069C5.47877 6.94533 5.18185 6.74694 4.93174 6.49683C4.42663 5.99171 4.14286 5.30663 4.14286 4.59229V4.14286C4.14286 3.30932 4.47398 2.50992 5.06338 1.92052C5.65278 1.33112 6.45218 1 7.28571 1C8.53602 1 9.73512 1.49668 10.6192 2.38078C11.5033 3.26488 12 4.46398 12 5.71429M12 7.28571H17.1637C18.6519 7.28571 19.8571 6.07886 19.8571 4.59229V4.14286C19.8571 3.30932 19.526 2.50992 18.9366 1.92052C18.3472 1.33112 17.5478 1 16.7143 1C15.464 1 14.2649 1.49668 13.3808 2.38078C12.4967 3.26488 12 4.46398 12 5.71429M12 7.28571V23"
+                          stroke="#5E5E5E"
+                          stroke-width="1.5"
+                        /></svg></span
+                    >Hoa & Quà tặng
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="cate-header" style="margin-top: 50px">
+                  <span><img src="./images/infusion 1.png" /></span>
+                  Ăn uống, giải trí, du lịch
+                </div>
+                <div class="row">
+                  <div class="col1 col-12 col-md-6">
+                    <ul class="cate-list">
+                      <li>
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <g clip-path="url(#clip0_2742_6)">
+                              <path
+                                d="M2.69483 2.23779L19.965 19.508C20.2927 19.8357 20.4768 20.2801 20.4768 20.7436C20.4768 21.207 20.2927 21.6515 19.965 21.9792C19.6372 22.3068 19.1928 22.4908 18.7294 22.4908C18.266 22.4908 17.8215 22.3068 17.4937 21.9792L13.275 17.6878C12.9989 17.4074 12.844 17.0299 12.8437 16.6364V16.3772C12.8438 16.1785 12.8043 15.9818 12.7277 15.7985C12.6511 15.6152 12.5389 15.4489 12.3975 15.3094L11.8528 14.8064C11.6679 14.6358 11.443 14.5144 11.1989 14.4535C10.9548 14.3925 10.6993 14.394 10.4559 14.4576C10.0721 14.5578 9.66875 14.5559 9.2859 14.452C8.90305 14.3482 8.55401 14.146 8.27343 13.8656L4.26889 9.86061C1.89327 7.48498 1.01905 3.89764 2.69483 2.23779Z"
+                                stroke="black"
+                                stroke-opacity="0.6"
+                                stroke-width="1.5"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M18.75 1.5L15.1289 5.12109C14.8503 5.39968 14.6292 5.73043 14.4784 6.09445C14.3276 6.45847 14.25 6.84863 14.25 7.24266V7.93922C14.25 8.03777 14.2306 8.13536 14.1929 8.22641C14.1552 8.31746 14.0999 8.40018 14.0302 8.46984L13.5 9M15 10.5L15.5302 9.96984C15.5998 9.90013 15.6825 9.84484 15.7736 9.80711C15.8646 9.76939 15.9622 9.74998 16.0608 9.75H16.7573C17.1514 9.75 17.5415 9.67238 17.9055 9.52158C18.2696 9.37078 18.6003 9.14974 18.8789 8.87109L22.5 5.25M20.625 3.375L16.875 7.125M9.375 17.25L4.70062 21.9506C4.34901 22.3021 3.87218 22.4996 3.375 22.4996C2.87781 22.4996 2.40099 22.3021 2.04937 21.9506C1.69786 21.599 1.5004 21.1222 1.5004 20.625C1.5004 20.1278 1.69786 19.651 2.04937 19.2994L6 15.375"
+                                stroke="black"
+                                stroke-opacity="0.6"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_2742_6">
+                                <rect width="24" height="24" fill="white" />
+                              </clipPath>
+                            </defs></svg></span
+                        >Nhà hàng, khách sạn
+                      </li>
+                      <li>
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M1.5 21H22.5V22.5H1.5V21ZM18.375 8.25H6C5.60218 8.25 5.22064 8.40804 4.93934 8.68934C4.65804 8.97064 4.5 9.35218 4.5 9.75V15.75C4.50119 16.7442 4.89666 17.6973 5.59966 18.4003C6.30267 19.1033 7.2558 19.4988 8.25 19.5H14.25C15.2442 19.4988 16.1973 19.1033 16.9003 18.4003C17.6033 17.6973 17.9988 16.7442 18 15.75V15H18.375C19.2701 15 20.1285 14.6444 20.7615 14.0115C21.3944 13.3785 21.75 12.5201 21.75 11.625C21.75 10.7299 21.3944 9.87145 20.7615 9.23851C20.1285 8.60558 19.2701 8.25 18.375 8.25ZM16.5 15.75C16.4994 16.3466 16.2622 16.9185 15.8403 17.3403C15.4185 17.7622 14.8466 17.9994 14.25 18H8.25C7.65345 17.9994 7.0815 17.7622 6.65967 17.3403C6.23784 16.9185 6.0006 16.3466 6 15.75V9.75H16.5V15.75ZM18.375 13.5H18V9.75H18.375C18.8723 9.75 19.3492 9.94754 19.7008 10.2992C20.0525 10.6508 20.25 11.1277 20.25 11.625C20.25 12.1223 20.0525 12.5992 19.7008 12.9508C19.3492 13.3025 18.8723 13.5 18.375 13.5ZM14.25 6.75H12.75V6.6405C12.7509 6.36178 12.6738 6.08836 12.5273 5.85122C12.3808 5.61409 12.1709 5.4227 11.9213 5.29875L9.9075 4.293C9.40821 4.04509 8.98831 3.66232 8.69537 3.18805C8.40243 2.71378 8.24815 2.16695 8.25 1.6095V0.75H9.75V1.6095C9.74914 1.8883 9.8264 2.16177 9.973 2.39892C10.1196 2.63606 10.3297 2.8274 10.5795 2.95125L12.5917 3.957C13.0912 4.2048 13.5112 4.58753 13.8043 5.06181C14.0974 5.53609 14.2518 6.08297 14.25 6.6405V6.75Z"
+                              fill="black"
+                              fill-opacity="0.6"
+                            /></svg></span
+                        >Café
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col2 col-12 col-md-6">
+                    <ul class="cate-list">
+                      <li>
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M9.75002 3V2.25C9.75002 1.65326 9.98708 1.08097 10.409 0.65901C10.831 0.237053 11.4033 0 12 0L15 0C15.1989 0 15.3897 0.0790176 15.5304 0.21967C15.671 0.360322 15.75 0.551088 15.75 0.75C15.75 0.948912 15.671 1.13968 15.5304 1.28033C15.3897 1.42098 15.1989 1.5 15 1.5H12C11.8011 1.5 11.6103 1.57902 11.4697 1.71967C11.329 1.86032 11.25 2.05109 11.25 2.25V3H18.75C19.3234 2.99936 19.8754 3.21764 20.2932 3.61025C20.7111 4.00287 20.9633 4.5402 20.9983 5.1125C21.0334 5.6848 20.8486 6.24889 20.4818 6.68955C20.1149 7.13021 19.5937 7.41419 19.0245 7.4835L18.0945 21.102C18.0687 21.4811 17.8999 21.8363 17.6223 22.0958C17.3447 22.3553 16.979 22.4997 16.599 22.5H7.40102C7.02077 22.5001 6.65467 22.3558 6.37676 22.0963C6.09885 21.8368 5.92988 21.4814 5.90402 21.102L4.97552 7.4835C4.40636 7.41419 3.88512 7.13021 3.51828 6.68955C3.15144 6.24889 2.96667 5.6848 3.00171 5.1125C3.03674 4.5402 3.28895 4.00287 3.70681 3.61025C4.12467 3.21764 4.67665 2.99936 5.25002 3H9.75002ZM6.48002 7.5L7.40102 21H16.599L16.7115 19.341C15.5203 19.0383 14.473 18.3274 13.752 17.332C13.031 16.3366 12.6819 15.1199 12.7656 13.8937C12.8493 12.6675 13.3604 11.5095 14.21 10.6213C15.0596 9.73311 16.1937 9.17106 17.415 9.033L17.52 7.5H6.48002ZM5.25002 6H18.75C18.9489 6 19.1397 5.92098 19.2804 5.78033C19.421 5.63968 19.5 5.44891 19.5 5.25C19.5 5.05109 19.421 4.86032 19.2804 4.71967C19.1397 4.57902 18.9489 4.5 18.75 4.5H5.25002C5.05111 4.5 4.86035 4.57902 4.71969 4.71967C4.57904 4.86032 4.50002 5.05109 4.50002 5.25C4.50002 5.44891 4.57904 5.63968 4.71969 5.78033C4.86035 5.92098 5.05111 6 5.25002 6ZM16.815 17.8095L17.31 10.5645C16.4927 10.717 15.7493 11.1367 15.1966 11.7577C14.6438 12.3787 14.3131 13.1658 14.2565 13.9953C14.1998 14.8247 14.4204 15.6495 14.8835 16.3399C15.3466 17.0303 16.0261 17.5473 16.815 17.8095Z"
+                              fill="#5E5E5E"
+                            /></svg></span
+                        >Trà chanh
+                      </li>
+                      <li>
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <g opacity="0.6" clip-path="url(#clip0_2643_17)">
+                              <path
+                                d="M15.0938 19.5C15.0938 21.157 14.1258 22.5 12.4688 22.5H6.28125C4.62422 22.5 3.65625 21.157 3.65625 19.5M15.75 15.75C16.5783 15.75 17.25 16.5895 17.25 17.625C17.25 18.6605 16.5783 19.5 15.75 19.5H3C2.17172 19.5 1.5 18.6605 1.5 17.625C1.5 16.5895 2.17172 15.75 3 15.75"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M3 12.9375V12.9272C3 10.3491 5.10938 9 7.6875 9H11.0625C13.6406 9 15.75 10.3594 15.75 12.9375V12.9272M11.2969 5.25L11.6456 8.24859M16.125 15.75H8.40516C8.30583 15.75 8.21058 15.7895 8.14031 15.8597L6.88266 17.1173C6.86524 17.1348 6.84456 17.1486 6.8218 17.158C6.79904 17.1675 6.77464 17.1723 6.75 17.1723C6.72536 17.1723 6.70096 17.1675 6.6782 17.158C6.65544 17.1486 6.63476 17.1348 6.61734 17.1173L5.35969 15.8597C5.28942 15.7895 5.19417 15.75 5.09484 15.75H2.625C2.32663 15.75 2.04048 15.6315 1.8295 15.4205C1.61853 15.2095 1.5 14.9234 1.5 14.625C1.5 14.3266 1.61853 14.0405 1.8295 13.8295C2.04048 13.6185 2.32663 13.5 2.625 13.5H16.125C16.4234 13.5 16.7095 13.6185 16.9205 13.8295C17.1315 14.0405 17.25 14.3266 17.25 14.625C17.25 14.9234 17.1315 15.2095 16.9205 15.4205C16.7095 15.6315 16.4234 15.75 16.125 15.75Z"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M12 22.5H18.5302C18.9086 22.5 19.273 22.3569 19.5504 22.0995C19.8278 21.8421 19.9977 21.4894 20.0259 21.112L21.7031 5.25"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M17.25 5.25L18 2.25L20.2031 1.5"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M10.5 5.25H22.5"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-miterlimit="10"
+                                stroke-linecap="round"
+                              />
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_2643_17">
+                                <rect width="24" height="24" fill="white" />
+                              </clipPath>
+                            </defs></svg></span
+                        >Quán ăn nhỏ
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 style="margin-top: 150px">
+          VTC POS <br /><span>-</span> GIẢI PHÁP QUẢN LÝ BÁN HÀNG ĐƠN GIẢN, HIỆU
+          QUẢ
+        </h3>
+        <div class="solution-2">
+          <img class="bg-giaiphap" src="./images/bg-giaiphap.png" />
+          <img class="sln-img img-gp1" src="./images/Group 34.png" />
+          <img class="sln-img img-gp2" src="./images/Group 35.png" />
+          <img class="sln-img img-gp3" src="./images/Group 36.png" />
+          <img class="sln-img img-gp4" src="./images/Group 37.png" />
+          <img class="sln-img img-gp5" src="./images/Group 38.png" />
+          <div class="sln sln-1">
+            <div class="sln-num">01</div>
+            <div class="sln-header">Đơn giản & Dễ sử dụng</div>
+            <p class="sln-txt">Tạo tài khoản và sử dụng ngay</p>
+          </div>
+
+          <div class="sln sln-2">
+            <div class="sln-num">02</div>
+            <div class="sln-header">Tiết kiệm chi phí</div>
+            <p class="sln-txt">
+              Sử dụng điện thoại, máy tính bảng có sẵn <br />
+              Miễn 01 năm phí sử dụng dịch vụ và phí cài đặt.
+            </p>
+          </div>
+
+          <div class="sln sln-3">
+            <div class="sln-num">03</div>
+            <div class="sln-header">Quản lý từ xa mọi lúc, mọi nơi</div>
+            <p class="sln-txt">
+              Quản lý tất cả các chi nhánh và <br />
+              cửa hàng từ xa
+            </p>
+          </div>
+
+          <div class="sln sln-4">
+            <div class="sln-num">04</div>
+            <div class="sln-header">
+              Tiện lợi cho khách hàng,<br class="d-none-1400" />
+              dễ dàng cho chủ quán
+            </div>
+            <p class="sln-txt">
+              Rất nhiều phương thức thanh toán, đặc biệt với mã<br
+                class="d-none-1400"
+              />
+              thanh toán QR tự động cho mỗi đơn hàng, tránh<br
+                class="d-none-1400"
+              />
+              lừa đảo và giả mạo,…gây thất thoát doanh thu.
+            </p>
+          </div>
+
+          <div class="sln sln-5">
+            <div class="sln-num">05</div>
+            <div class="sln-header">All - in - one</div>
+            <p class="sln-txt">
+              Tất cả tính năng trong một ứng dụng<br />
+              (Thanh toán đơn hàng, cài đặt thực <br />
+              đơn, quản lý nhân viên, quản lý đơn <br />
+              hàng, xem báo cáo doanh thu...v.v)
+            </p>
+          </div>
+        </div>
+
+        <div class="solution-2-mobile">
+          <div class="row">
+            <div class="col-12 mb-5">
+              <div class="sln-item-mb">
+                <img src="./images/Group 34.png" />
+                <div class="sln-header">Đơn giản & Dễ sử dụng</div>
+                <p class="sln-txt">Tạo tài khoản và sử dụng ngay</p>
+              </div>
+            </div>
+
+            <div class="col-12 mb-5">
+              <div class="sln-item-mb">
+                <img src="./images/Group 35.png" />
+                <div class="sln-header">Tiết kiệm chi phí</div>
+                <p class="sln-txt">
+                  Sử dụng điện thoại, máy tính bảng có sẵn. <br />
+                  Miễn 01 năm phí sử dụng dịch vụ và phí cài đặt.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-12 mb-5">
+              <div class="sln-item-mb">
+                <img src="./images/Group 36.png" />
+                <div class="sln-header">Quản lý từ xa mọi lúc, mọi nơi</div>
+                <p class="sln-txt">
+                  Quản lý tất cả các chi nhánh và cửa hàng từ xa
+                </p>
+              </div>
+            </div>
+
+            <div class="col-12 mb-5">
+              <div class="sln-item-mb">
+                <img src="./images/Group 37.png" />
+                <div class="sln-header">
+                  Tiện lợi cho khách hàng, dễ dàng cho chủ quán
+                </div>
+                <p class="sln-txt">
+                  Rất nhiều phương thức thanh toán, đặc biệt với mã thanh toán
+                  QR tự động cho mỗi đơn hàng, tránh lừa đảo và giả mạo,…gây
+                  thất thoát doanh thu.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="sln-item-mb">
+                <img src="./images/Group 38.png" />
+                <div class="sln-header">All - in - one</div>
+                <p class="sln-txt">
+                  Tất cả tính năng trong 1 ứng dụng (thanh toán đơn hàng, cài
+                  đặt thực đơn, quản lý nhân viên, quản lý đơn hàng, xem báo cáo
+                  doanh thu... v.v)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy" id="policy">
+      <div class="policy-container">
+        <h3 style="margin-bottom: 100px">CHÍNH SÁCH</h3>
+        <div class="row">
+          <div class="col-12 col-lg-4 order-2 order-lg-1 mb-5 mb-lg-0">
+            <div class="pol-item">
+              <img src="./images/Group 39.png" />
+              <p>Trải nghiệm toàn bộ tính năng</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 order-1 order-lg-2 mb-5 mb-lg-0">
+            <div class="center-pol-item">
+              <p style="margin-bottom: 20px">
+                <span
+                  >365
+                  <img src="./images/Subtract.png" />
+                </span>
+                ngày
+              </p>
+              <p class="under-txt">sử dụng miễn phí</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 order-3 order-lg-3">
+            <div class="pol-item">
+              <img src="./images/Group 40.png" />
+              <p>Chuyên gia hướng dẫn 1:1</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="solution" id="solution">
+      <div class="container">
+        <h3>VTC POS - Giải pháp vượt trội</h3>
+        <div class="row">
+          <div class="col-lg-4">
+            <img
+              class="sln-image"
+              src="./images/chinhsach 1.png"
+              style="margin: 55px auto; width: 171px; height: auto"
+            />
+            <h4>Chính sách của VTC POS</h4>
+            <img
+              src="./images/Group 11.png"
+              style="
+                margin-top: 50px;
+                max-width: 412px;
+                width: 100%;
+                height: auto;
+              "
+            />
+          </div>
+          <div class="col-lg-4">
+            <h4>Lợi ích của VTC POS</h4>
+            <div class="benefit-container">
+              <div class="benefit-ref ref1">
+                Lợi ích cho chủ cửa hàng/doanh nghiệp:
+              </div>
+              <ul>
+                <li>Dễ dàng quản lý, vận hành</li>
+                <li>Nâng cao khả năng cạnh tranh trên thị trường</li>
+              </ul>
+
+              <div class="benefit-ref ref2">
+                Lợi ích cho khách hàng sử dụng dịch vụ:
+              </div>
+              <ul>
+                <li>Tiện lợi</li>
+                <li>Tiết kiệm thời gian</li>
+                <li>
+                  Hóa đơn sản phẩm minh bạch rõ ràng, tránh nhầm lẫn thông tin
+                  hóa đơn
+                </li>
+              </ul>
+
+              <div class="benefit-ref ref3">Lợi ích cho nhân viên:</div>
+              <ul>
+                <li>Tiện lợi</li>
+                <li>
+                  Tiết kiệm tối đa thời gian, công sức, tăng hiệu suất lao động
+                </li>
+              </ul>
+            </div>
+            <img
+              class="sln-image"
+              src="./images/Group.png"
+              style="margin-top: 30px; width: 187px; height: auto"
+            />
+          </div>
+          <div class="col-lg-4">
+            <img
+              class="sln-image"
+              src="./images/Frame.png"
+              style="margin: 45px auto 55px; width: 244px; height: auto"
+            />
+            <h4>Tính năng của VTC POS</h4>
+            <ul class="list-feature">
+              <li>Tính năng quản lý sản phẩm</li>
+              <li>Tính năng quản lý đơn hàng</li>
+              <li>Tính năng phân quyền và quản lý nhân sự</li>
+              <li>Theo dõi doanh thu</li>
+            </ul>
+          </div>
+        </div>
+        <div class="owl-carousel owl-theme owl-solution">
+          <div class="item">
+            <img
+              class="sln-image"
+              src="./images/chinhsach 1.png"
+              style="margin: 55px auto; width: 171px; height: auto"
+            />
+            <h4>Chính sách của VTC POS</h4>
+            <img
+              src="./images/Group 11.png"
+              style="
+                margin-top: 50px;
+                max-width: 412px;
+                width: 100%;
+                height: auto;
+              "
+            />
+          </div>
+          <div class="item">
+            <h4>Lợi ích của VTC POS</h4>
+            <div class="benefit-container">
+              <div class="benefit-ref ref1">
+                Lợi ích cho chủ cửa hàng/doanh nghiệp:
+              </div>
+              <ul>
+                <li>Dễ dàng quản lý, vận hành</li>
+                <li>Nâng cao khả năng cạnh tranh trên thị trường</li>
+              </ul>
+
+              <div class="benefit-ref ref2">
+                Lợi ích cho khách hàng sử dụng dịch vụ:
+              </div>
+              <ul>
+                <li>Tiện lợi</li>
+                <li>Tiết kiệm thời gian</li>
+                <li>
+                  Hóa đơn sản phẩm minh bạch rõ ràng, tránh nhầm lẫn thông tin
+                  hóa đơn
+                </li>
+              </ul>
+
+              <div class="benefit-ref ref3">Lợi ích cho nhân viên:</div>
+              <ul>
+                <li>Tiện lợi</li>
+                <li>
+                  Tiết kiệm tối đa thời gian, công sức, tăng hiệu suất lao động
+                </li>
+              </ul>
+            </div>
+            <img
+              class="sln-image"
+              src="./images/Group.png"
+              style="margin-top: 30px; width: 187px; height: auto"
+            />
+          </div>
+          <div class="item">
+            <img
+              class="sln-image"
+              src="./images/Frame.png"
+              style="margin: 45px auto 55px; width: 244px; height: auto"
+            />
+            <h4>Tính năng của VTC POS</h4>
+            <ul class="list-feature">
+              <li>Tính năng quản lý sản phẩm</li>
+              <li>Tính năng quản lý đơn hàng</li>
+              <li>Tính năng phân quyền và quản lý nhân sự</li>
+              <li>Theo dõi doanh thu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="guide" id="guide">
+      <div class="container">
+        <h3>HƯỚNG DẪN</h3>
+
+        <div class="guide-wrapper">
+          <img class="border-guide" src="./images//border-guide.png" />
+          <div class="list-tab">
+            <a class="tablinks active" onclick="openTab(event, 'tab-1')"
+              >Đăng ký tài khoản</a
+            >
+            <a class="tablinks" onclick="openTab(event, 'tab-2')"
+              >Quản lý nhân sự và phân quyền</a
+            >
+            <a class="tablinks" onclick="openTab(event, 'tab-3')"
+              >Quản lý đơn hàng</a
+            >
+            <a class="tablinks" onclick="openTab(event, 'tab-4')"
+              >Quản lý chi nhánh/bàn</a
+            >
+            <a class="tablinks" onclick="openTab(event, 'tab-5')"
+              >Quản lý mặt hàng</a
+            >
+            <a class="tablinks" onclick="openTab(event, 'tab-6')"
+              >Báo cáo doanh thu</a
+            >
+          </div>
+          <div id="tab-1" class="tabcontent">
+            <div class="owl-carousel owl-theme owl-pc owl1">
+              <div class="item" data-hash="tab1-b1">
+                <img src="./images/DkTaikhoan_01.png" />
+              </div>
+              <div class="item" data-hash="tab1-b2">
+                <img src="./images/DkTaikhoan_02.png" />
+              </div>
+              <div class="item" data-hash="tab1-b3">
+                <img src="./images/DkTaikhoan_03.png" />
+              </div>
+              <div class="item" data-hash="tab1-b4">
+                <img src="./images/DkTaikhoan_04.png" />
+              </div>
+            </div>
+
+            <div class="tab-pagi tab-pagi1">
+              <a href="#tab1-b1" class="my-dot active">
+                <span></span>
+                <p>Bước 1: Tải app VTC POS, nhấp chọn ĐĂNG KÝ</p>
+              </a>
+              <a href="#tab1-b2" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 2: Đăng ký mở tài khoản bằng số điện thoại (Đã dùng để
+                  đăng ký tài khoản ví VTC Pay trước đó)
+                </p>
+              </a>
+              <a href="#tab1-b3" class="my-dot">
+                <span></span>
+                <p>Bước 3: Điền các thông tin yêu cầu</p>
+              </a>
+              <a href="#tab1-b4" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 4: Xác nhận hoàn thành đăng ký và đăng nhập theo hướng
+                  dẫn
+                </p>
+              </a>
+            </div>
+          </div>
+          <div id="tab-2" class="tabcontent">
+            <div class="owl-carousel owl-theme owl-pc owl2">
+              <div class="item" data-hash="tab2-b1">
+                <img src="./images/Nhansu_01.png" />
+              </div>
+              <div class="item" data-hash="tab2-b2">
+                <img src="./images/Nhansu_02.png" />
+              </div>
+              <div class="item" data-hash="tab2-b3">
+                <img src="./images/Nhansu_03.png" />
+              </div>
+              <div class="item" data-hash="tab2-b4">
+                <img src="./images/Nhansu_04.png" />
+              </div>
+              <div class="item" data-hash="tab2-b5">
+                <img src="./images/Nhansu_05.png" />
+              </div>
+              <div class="item" data-hash="tab2-b6">
+                <img src="./images/Nhansu_06.png" />
+              </div>
+              <div class="item" data-hash="tab2-b7">
+                <img src="./images/Nhansu_07.PNG" />
+              </div>
+            </div>
+
+            <div class="tab-pagi tab-pagi2">
+              <a href="#tab2-b1" class="my-dot active">
+                <span></span>
+                <p>
+                  Bước 1: Tại màn hình chính, chọn Quản lý nhân sự và phân quyền
+                </p>
+              </a>
+              <a href="#tab2-b2" class="my-dot">
+                <span></span>
+                <p>Bước 2: Chọn phân quyền vị trí</p>
+              </a>
+              <a href="#tab2-b3" class="my-dot">
+                <span></span>
+                <p>Bước 3: Nhập thông tin vị trí được phân quyền</p>
+              </a>
+              <a href="#tab2-b4" class="my-dot">
+                <span></span>
+                <p>Bước 4: Chọn ĐÓNG để quay lại màn hình chính</p>
+              </a>
+              <a href="#tab2-b5" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 5: Chọn QUẢN LÝ NHÂN SỰ, nhấn dấu cộng để thêm nhân sự
+                  theo từng vị trí
+                </p>
+              </a>
+              <a href="#tab2-b6" class="my-dot">
+                <span></span>
+                <p>Bước 6: Thêm thông tin nhân sự ( Tên, số điện thoại).</p>
+              </a>
+              <a href="#tab2-b7" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 7: Nhấp vào TÙY CHỌN, chọn các vai trò muốn phân quyền
+                  cho nhân sự
+                </p>
+              </a>
+            </div>
+          </div>
+          <div id="tab-3" class="tabcontent">
+            <div class="owl-carousel owl-theme owl-pc owl3">
+              <div class="item" data-hash="tab3-b1">
+                <img src="./images/Donhang_01.png" />
+              </div>
+              <div class="item" data-hash="tab3-b2">
+                <img src="./images/Donhang_02.png" />
+              </div>
+              <div class="item" data-hash="tab3-b3">
+                <img src="./images/Donhang_03.png" />
+              </div>
+              <div class="item" data-hash="tab3-b4">
+                <img src="./images/Donhang_04.png" />
+              </div>
+              <div class="item" data-hash="tab3-b5">
+                <img src="./images/Donhang_05.png" />
+              </div>
+            </div>
+            <div class="tab-pagi tab-pagi3">
+              <a href="#tab3-b1" class="my-dot active">
+                <span></span>
+                <p>
+                  Bước 1: Nhấp chọn quản lý đơn (1) để xem lịch sử đơn hàng hoặc
+                  Tạo mới (2)
+                </p>
+              </a>
+              <a href="#tab3-b2" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 2: Chọn số bàn, tên món, nhập tên khách và nhấn TIẾP TỤC
+                </p>
+              </a>
+              <a href="#tab3-b3" class="my-dot">
+                <span></span>
+                <p>Bước 3: Nhấp chọn THANH TOÁN</p>
+              </a>
+              <a href="#tab3-b4" class="my-dot">
+                <span></span>
+                <p>Bước 4: Chọn hình thức thanh toán theo nhu cầu Khách hàng</p>
+              </a>
+              <a href="#tab3-b5" class="my-dot">
+                <span></span>
+                <p>Bước 5: Hoàn tất đơn hàng, nhấn in hóa đơn (nếu cần)</p>
+              </a>
+            </div>
+          </div>
+          <div id="tab-4" class="tabcontent">
+            <div class="owl-carousel owl-theme owl-pc owl4">
+              <div class="item" data-hash="tab4-b1">
+                <img src="./images/Chinhanh_01.png" />
+              </div>
+              <div class="item" data-hash="tab4-b2">
+                <img src="./images/Chinhanh_02.png" />
+              </div>
+              <div class="item" data-hash="tab4-b3">
+                <img src="./images/Chinhanh_03.png" />
+              </div>
+              <div class="item" data-hash="tab4-b4">
+                <img src="./images/Chinhanh_04.png" />
+              </div>
+              <div class="item" data-hash="tab4-b5">
+                <img src="./images/Chinhanh_05.png" />
+              </div>
+              <div class="item" data-hash="tab4-b6">
+                <img src="./images/Chinhanh_06.png" />
+              </div>
+            </div>
+
+            <div class="tab-pagi tab-pagi4">
+              <a href="#tab4-b1" class="my-dot active">
+                <span></span>
+                <p>Bước 1: Tại trang chủ, nhấp chọn quản lý chi nhánh, bàn</p>
+              </a>
+              <a href="#tab4-b2" class="my-dot">
+                <span></span>
+                <p>Bước 2: Chọn cài đặt chi nhánh</p>
+              </a>
+              <a href="#tab4-b3" class="my-dot">
+                <span></span>
+                <p>Bước 3: Điền tên chi nhánh, nhấn lưu</p>
+              </a>
+              <a href="#tab4-b4" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 4: Chọn ĐÓNG để quay về màn hình chính để tiếp tục tạo
+                  danh sách các bàn (Nếu cần)
+                </p>
+              </a>
+              <a href="#tab4-b5" class="my-dot">
+                <span></span>
+                <p>Bước 5: Nhấn chọn mũi tên để thêm bàn</p>
+              </a>
+              <a href="#tab4-b6" class="my-dot">
+                <span></span>
+                <p>Bước 6: Đặt tên bàn, nhấn lưu, tạo bàn thành công</p>
+              </a>
+            </div>
+          </div>
+          <div id="tab-5" class="tabcontent">
+            <div class="owl-carousel owl-theme owl-pc owl5">
+              <div class="item" data-hash="tab5-b1">
+                <img src="./images/Mathang_01.png" />
+              </div>
+              <div class="item" data-hash="tab5-b2">
+                <img src="./images/Mathang_02.png" />
+              </div>
+              <div class="item" data-hash="tab5-b3">
+                <img src="./images/Mathang_03.png" />
+              </div>
+              <div class="item" data-hash="tab5-b4">
+                <img src="./images/Mathang_04.png" />
+              </div>
+              <div class="item" data-hash="tab5-b5">
+                <img src="./images/Mathang_05.png" />
+              </div>
+              <div class="item" data-hash="tab5-b6">
+                <img src="./images/Mathang_06.png" />
+              </div>
+            </div>
+
+            <div class="tab-pagi tab-pagi5">
+              <a href="#tab5-b1" class="my-dot active">
+                <span></span>
+                <p>Bước 1: Tại trang chủ, nhấp chọn quản lý mặt hàng</p>
+              </a>
+              <a href="#tab5-b2" class="my-dot">
+                <span></span>
+                <p>Bước 2: Thêm mới sản phẩm/nhóm sản phẩm (Nếu cần)</p>
+              </a>
+              <a href="#tab5-b3" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 3: Điền thông tin, tải ảnh sản phấm. Nhấn ĐÓNG để quay về
+                  màn hình chính, thêm các sản phẩm phụ (Nếu cần)
+                </p>
+              </a>
+              <a href="#tab5-b4" class="my-dot">
+                <span></span>
+                <p>Bước 4: Chọn thêm mới sản phẩm phụ/nhóm sản phẩm phụ</p>
+              </a>
+              <a href="#tab5-b5" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 5: Điền thông tin sản phẩm phụ (topping)/nhóm sản phẩm
+                  phụ
+                </p>
+              </a>
+              <a href="#tab5-b6" class="my-dot">
+                <span></span>
+                <p>Bước 6: Kiểm tra lại thông tin/chỉnh sửa nếu cần</p>
+              </a>
+            </div>
+          </div>
+          <div id="tab-6" class="tabcontent">
+            <div class="owl-carousel owl-theme owl-pc owl6">
+              <div class="item" data-hash="tab6-b1">
+                <img src="./images/Doanhthu_01.png" />
+              </div>
+              <div class="item" data-hash="tab6-b2">
+                <img src="./images/Doanhthu_02.png" />
+              </div>
+              <div class="item" data-hash="tab6-b3">
+                <img src="./images/Doanhthu_03.png" />
+              </div>
+              <div class="item" data-hash="tab6-b4">
+                <img src="./images/Doanhthu_04.png" />
+              </div>
+              <div class="item" data-hash="tab6-b5">
+                <img src="./images/Doanhthu_05.png" />
+              </div>
+              <div class="item" data-hash="tab6-b6">
+                <img src="./images/Doanhthu_06.png" />
+              </div>
+            </div>
+
+            <div class="tab-pagi tab-pagi6">
+              <a href="#tab6-b1" class="my-dot active">
+                <span></span>
+                <p>Bước 1: Tại màn hình chính, nhấp chọn doanh thu</p>
+              </a>
+              <a href="#tab6-b2" class="my-dot">
+                <span></span>
+                <p>Bước 2: Bạn có thể kiểm tra tổng doanh thu theo tháng</p>
+              </a>
+              <a href="#tab6-b3" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 3: Hoặc doanh thu theo cơ sở hoặc từ các phương thức
+                  thanh toán khác nhau
+                </p>
+              </a>
+              <a href="#tab6-b4" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 4: Nhấp chọn icon hòm thư để nhận báo cáo doanh thu chi
+                  tiết về địa chỉ email của bạn
+                </p>
+              </a>
+              <a href="#tab6-b5" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 5: Bạn cũng có thể xem báo cáo vận hành từ mục thông báo:
+                  Nhấp chọn tài khoản, nhấp chọn thông báo.
+                </p>
+              </a>
+              <a href="#tab6-b6" class="my-dot">
+                <span></span>
+                <p>
+                  Bước 6: Dễ dàng thấy báo cáo chi tiết luồng vận hành từ các
+                  đơn hàng, lượng khách, nhân sự phụ trách.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="guide-wrapper-mb">
+          <input
+            readonly
+            id="tab-mb-holder"
+            type="text"
+            value="Đăng ký tài khoản"
+          />
+          <div class="list-tab-mb">
+            <a class="tablink-mb active" onclick="openTabMob(event, 'tab-mb-1')"
+              >Đăng ký tài khoản</a
+            >
+            <a class="tablink-mb" onclick="openTabMob(event, 'tab-mb-2')"
+              >Quản lý nhân sự và phân quyền</a
+            >
+
+            <a class="tablink-mb" onclick="openTabMob(event, 'tab-mb-3')"
+              >Quản lý đơn hàng
+            </a>
+
+            <a class="tablink-mb" onclick="openTabMob(event, 'tab-mb-4')"
+              >Quản lý chi nhánh/bàn</a
+            >
+            <a class="tablink-mb" onclick="openTabMob(event, 'tab-mb-5')"
+              >Quản lý mặt hàng</a
+            >
+            <a class="tablink-mb" onclick="openTabMob(event, 'tab-mb-6')"
+              >Báo cáo doanh thu</a
+            >
+          </div>
+          <div id="tab-mb-1" class="tabcontent-mb">
+            <div class="owl-carousel owl-theme owl-mb owl-2">
+              <div class="item">
+                <img src="./images/DkTaikhoan_01.png" />
+                <p>Bước 1: Tải app VTC POS, nhấp chọn ĐĂNG KÝ</p>
+              </div>
+              <div class="item">
+                <img src="./images/DkTaikhoan_02.png" />
+                <p>
+                  Bước 2: Đăng ký mở tài khoản bằng số điện thoại (Đã dùng để
+                  đăng ký tài khoản ví VTC Pay trước đó)
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/DkTaikhoan_03.png" />
+                <p>Bước 3: Điền các thông tin yêu cầu</p>
+              </div>
+              <div class="item">
+                <img src="./images/DkTaikhoan_04.png" />
+                <p>
+                  Bước 4: Xác nhận hoàn thành đăng ký và đăng nhập theo hướng
+                  dẫn
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="tab-mb-2" class="tabcontent-mb">
+            <div class="owl-carousel owl-theme owl-mb owl-2">
+              <div class="item">
+                <img src="./images/Nhansu_01.png" />
+                <p>
+                  Bước 1: Tại màn hình chính, chọn Quản lý nhân sự và phân quyền
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Nhansu_02.png" />
+                <p>Bước 2: Chọn phân quyền vị trí</p>
+              </div>
+              <div class="item">
+                <img src="./images/Nhansu_03.png" />
+                <p>Bước 3: Nhập thông tin vị trí được phân quyền</p>
+              </div>
+              <div class="item">
+                <img src="./images/Nhansu_04.png" />
+                <p>Bước 4: Chọn ĐÓNG để quay lại màn hình chính</p>
+              </div>
+              <div class="item">
+                <img src="./images/Nhansu_05.png" />
+                <p>
+                  Bước 5: Chọn QUẢN LÝ NH N SỰ, nhấn dấu cộng để thêm nhân sự
+                  theo từng vị trí
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Nhansu_06.png" />
+                <p>Ảnh 6: Thêm thông tin nhân sự ( Tên, số điện thoại).</p>
+              </div>
+              <div class="item">
+                <img src="./images/Nhansu_07.png" />
+                <p>
+                  Ảnh 7: Nhấp vào TÙY CHỌN, chọn các vai trò muốn phân quyền cho
+                  nhân sự
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="tab-mb-3" class="tabcontent-mb">
+            <div class="owl-carousel owl-theme owl-mb owl-3">
+              <div class="item">
+                <img src="./images/Donhang_01.png" />
+                <p>
+                  Bước 1: Nhấp chọn quản lý đơn (1) để xem lịch sử đơn hàng hoặc
+                  Tạo mới (2)
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Donhang_02.png" />
+                <p>
+                  Bước 2: Chọn số bàn, tên món, nhập tên khách và nhấn TIẾP TỤC
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Donhang_03.png" />
+                <p>Bước 3: Nhấp chọn THANH TOÁN</p>
+              </div>
+              <div class="item">
+                <img src="./images/Donhang_04.png" />
+                <p>Bước 4: Chọn hình thức thanh toán theo nhu cầu Khách hàng</p>
+              </div>
+              <div class="item">
+                <img src="./images/Donhang_05.png" />
+                <p>Bước 5: Hoàn tất đơn hàng, nhấn in hóa đơn (nếu cần)</p>
+              </div>
+            </div>
+          </div>
+          <div id="tab-mb-4" class="tabcontent-mb">
+            <div class="owl-carousel owl-theme owl-mb owl-4">
+              <div class="item">
+                <img src="./images/Chinhanh_01.png" />
+                <p>Bước 1: Tại trang chủ, nhấp chọn quản lý chi nhánh, bàn</p>
+              </div>
+              <div class="item">
+                <img src="./images/Chinhanh_02.png" />
+                <p>Bước 2: Chọn cài đặt chi nhánh</p>
+              </div>
+              <div class="item">
+                <img src="./images/Chinhanh_03.png" />
+                <p>Bước 3: Điền tên chi nhánh, nhấn lưu</p>
+              </div>
+              <div class="item">
+                <img src="./images/Chinhanh_04.png" />
+                <p>
+                  Bước 4: Chọn ĐÓNG để quay về màn hình chính để tiếp tục tạo
+                  danh sách các bàn (Nếu cần)
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Chinhanh_05.png" />
+                <p>Bước 5: Nhấn chọn mũi tên để thêm bàn</p>
+              </div>
+              <div class="item">
+                <img src="./images/Chinhanh_06.png" />
+                <p>Bước 6: Đặt tên bàn, nhấn lưu, tạo bàn thành công</p>
+              </div>
+            </div>
+          </div>
+          <div id="tab-mb-5" class="tabcontent-mb">
+            <div class="owl-carousel owl-theme owl-mb owl-5">
+              <div class="item">
+                <img src="./images/Mathang_01.png" />
+                <p>Bước 1: Tại trang chủ, nhấp chọn quản lý mặt hàng</p>
+              </div>
+              <div class="item">
+                <img src="./images/Mathang_02.png" />
+                <p>Bước 2: Thêm mới sản phẩm/nhóm sản phẩm (Nếu cần)</p>
+              </div>
+              <div class="item">
+                <img src="./images/Mathang_03.png" />
+                <p>
+                  Bước 3: Điền thông tin, tải ảnh sản phấm. Nhấn ĐÓNG để quay về
+                  màn hình chính, thêm các sản phẩm phụ (Nếu cần)
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Mathang_04.png" />
+                <p>Bước 4: Chọn thêm mới sản phẩm phụ/nhóm sản phẩm phụ</p>
+              </div>
+              <div class="item">
+                <img src="./images/Mathang_05.png" />
+                <p>
+                  Bước 5: Điền thông tin sản phẩm phụ (topping)/nhóm sản phẩm
+                  phụ
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Mathang_06.png" />
+                <p>Bước 6: Kiểm tra lại thông tin/chỉnh sửa nếu cần</p>
+              </div>
+            </div>
+          </div>
+          <div id="tab-mb-6" class="tabcontent-mb">
+            <div class="owl-carousel owl-theme owl-mb owl-6">
+              <div class="item">
+                <img src="./images/Doanhthu_01.png" />
+                <p>Bước 1: Tại màn hình chính, nhấp chọn doanh thu</p>
+              </div>
+              <div class="item">
+                <img src="./images/Doanhthu_02.png" />
+                <p>Bước 2: Bạn có thể kiểm tra tổng doanh thu theo tháng</p>
+              </div>
+              <div class="item">
+                <img src="./images/Doanhthu_03.png" />
+                <p>
+                  Bước 3: Hoặc doanh thu theo cơ sở hoặc từ các phương thức
+                  thanh toán khác nhau
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Doanhthu_04.png" />
+                <p>
+                  Bước 4: Nhấp chọn icon hòm thư để nhận báo cáo doanh thu chi
+                  tiết về địa chỉ email của bạn
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Doanhthu_05.png" />
+                <p>
+                  Bước 5: Bạn cũng có thể xem báo cáo vận hành từ mục thông báo:
+                  Nhấp chọn tài khoản, nhấp chọn thông báo.
+                </p>
+              </div>
+              <div class="item">
+                <img src="./images/Doanhthu_06.png" />
+                <p>
+                  Bước 6: Dễ dàng thấy báo cáo chi tiết luồng vận hành từ các
+                  đơn hàng, lượng khách, nhân sự phụ trách.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="register" id="register">
+      <div class="container">
+        <h3>đăng ký tư vấn</h3>
+        <div class="row">
+          <div class="col-12 col-lg-7">
+            <div class="form">
+              <div class="input-container">
+                <div class="input-wrapper">
+                  <label for="name">Họ và tên</label>
+                  <input id="name" type="text" />
+                </div>
+                <div class="input-wrapper">
+                  <label for="number">Số điện thoại</label>
+                  <input id="number" type="text" />
+                </div>
+                <div class="input-wrapper">
+                  <label for="email">Email</label>
+                  <input id="email" type="text" />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="city">Thành phố</label>
+                  <select id="city" class="form-select">
+                    <option selected></option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="branch">Ngành hàng</label>
+                  <select id="branch" class="form-select">
+                    <option selected></option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="address">Địa chỉ</label>
+                  <input id="address" type="text" />
+                </div>
+              </div>
+
+              <a
+                href=""
+                class="btn-submit"
+                data-bs-toggle="modal"
+                data-bs-target="#popup1"
+              >
+                ĐĂNG KÝ</a
+              >
+            </div>
+          </div>
+          <div class="d-none d-lg-block col-lg-5">
+            <img
+              style="
+                display: block;
+                margin: 0 auto;
+                height: 369px;
+                width: 100%;
+                max-width: 434px;
+              "
+              src="./images/Rectangle 79.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news" id="news">
+      <div class="container">
+        <h3>Tin tức</h3>
+        <div class="row">
+          <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+            <a href class="card-container">
+              <div class="card-img"><img src="./images/bg-guide.png" /></div>
+              <div class="card-header">
+                Giảm 30% thanh toán hóa đơn truyền hình SCTV tại VTC Pay
+              </div>
+              <div class="card-content">
+                Kể từ nay, bạn không còn vất vả chạy ngược xôi đội nắng mưa để
+                thanh toán gói cước.  Chỉ cần truy cập ứng dụng VTC Pay thanh
+                toán 1 chạm.
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+            <a href class="card-container">
+              <div class="card-img"><img src="./images/bg-guide.png" /></div>
+              <div class="card-header">
+                Giảm 30% thanh toán hóa đơn truyền hình SCTV tại VTC Pay
+              </div>
+              <div class="card-content">
+                Kể từ nay, bạn không còn vất vả chạy ngược xôi đội nắng mưa để
+                thanh toán gói cước.  Chỉ cần truy cập ứng dụng VTC Pay thanh
+                toán 1 chạm. 
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+            <a href class="card-container">
+              <div class="card-img"><img src="./images/bg-guide.png" /></div>
+              <div class="card-header">
+                Giảm 30% thanh toán hóa đơn truyền hình SCTV tại VTC Pay
+              </div>
+              <div class="card-content">
+                Kể từ nay, bạn không còn vất vả chạy ngược xôi đội nắng mưa để
+                thanh toán gói cước.  Chỉ cần truy cập ứng dụng VTC Pay thanh
+                toán 1 chạm. 
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup -->
+
+    <div class="modal fade" id="popup1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">THÔNG BÁO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p style="margin-top: 20px">Gửi thông tin thành công.</p>
+            <p>Chờ VTC POS liên hệ và hỗ trợ bạn nhé!</p>
+
+            <a href="" class="btn-popup">Xác nhận</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="test">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="tt-footer-2">về vtc pos</h4>
+                <ul class="introduce-list">
+                  <li>
+                    <a href="">&nbsp;Giới thiệu</a>
+                  </li>
+                  <li>
+                    <a href="">&nbsp;Hướng dẫn</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="tt-footer-2 margin_top_15px">Chăm sóc khách hàng</h4>
+                <ul class="introduce-list">
+                  <li>
+                    <a href="mailto:support.vtcpay@vtc.vn"
+                      ><img
+                        class="lazyloaded"
+                        data-src="https://vtcpay.vn/Content/images/2.png"
+                        alt="support.vtcpay@vtc.vn"
+                        src="https://vtcpay.vn/Content/images/2.png"
+                      />&nbsp;support.vtcpay@vtc.vn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="tel:19001530"
+                      ><img
+                        class="lazyloaded"
+                        data-src="https://vtcpay.vn/Content/images/icon_cskh.png"
+                        alt="19001530"
+                        src="https://vtcpay.vn/Content/images/icon_cskh.png"
+                      />&nbsp;1900 1530 hoặc 08.9999.1530</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://vtcpay.vn"
+                      ><img
+                        class="lazyloaded"
+                        data-src="https://vtcpay.vn/Content/images/6.png"
+                        alt="https://vtcpay.vn"
+                        src="https://vtcpay.vn/Content/images/6.png"
+                      />&nbsp;https://vtcpay.vn</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div
+                  class="tt-footer-2 margin_top_15px"
+                  style="display: flex; gap: 10px"
+                >
+                  kết nối với chúng tôi
+                  <ul class="list_ketnoi_ud" style="margin-top: -9px">
+                    <li>
+                      <a
+                        target="_blank"
+                        rel="nofollow"
+                        href="https://www.facebook.com/vidientuvtcpay/"
+                        ><img
+                          data-src="https://vtcpay.vn/Content/Images/facebook.svg"
+                          alt="Facebook"
+                          class="social-btn ls-is-cached lazyloaded"
+                          src="https://vtcpay.vn/Content/Images/facebook.svg"
+                      /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <h4 class="tt-footer-2 margin_top_15px">Hợp tác Kinh doanh</h4>
+                          <ul class="introduce-list">-->
+
+          <!--<li><a href="mailto:support.vtcpay@vtc.vn"><img class="lazyload" data-src="https://vtcpay.vn/Content/images/2.png" alt="support.vtcpay@vtc.vn">&nbsp;support.vtcpay@vtc.vn</a></li>
+                              <li><a href="tel:0899991530"><img class="lazyload" data-src="https://vtcpay.vn/Content/images/icon_cskh.png" alt="0899991530">&nbsp;08 9999 1530</a></li>
+                          </ul>
+                      </div>
+                      <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <h4 class="tt-footer-2 margin_top_15px">kinh doanh miền nam</h4>
+                          <ul class="introduce-list">-->
+          <!---->
+          <!--<li><a href="mailto:support.vtcpay@vtc.vn"><img class="lazyload" data-src="https://vtcpay.vn/Content/images/2.png" alt="support.vtcpay@vtc.vn">&nbsp;support.vtcpay@vtc.vn</a></li>
+                              <li><a href="tel:0937706116"><img class="lazyload" data-src="https://vtcpay.vn/Content/images/icon_cskh.png" alt="093.770.6116">&nbsp;093.770.6116</a></li>
+                          </ul>
+                      </div>-->
+          <!--</div>
+              </div>-->
+        </div>
+        <hr class="m-t-0 m-b-20" />
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="tt-footer1">
+              TỔNG CÔNG TY TRUYỀN THÔNG ĐA PHƯƠNG TIỆN (VTC)<br />
+            </div>
+            <div class="ct-ft-1">
+              <p>
+                <b>Hà Nội (Trụ sở chính):</b>
+                <span
+                  >Tầng 14, Tòa nhà VTC 23 Lạc Trung, Quận Hai Bà Trưng, Hà
+                  Nội</span
+                >
+              </p>
+              <small>
+                Giấy phép hoạt động số 31/GP-NHNN
+                <div class="tt_xdong">
+                  <a href="javascript:;"
+                    ><img
+                      alt="Bộ công thương"
+                      class="ls-is-cached lazyloaded"
+                      data-src="https://vtcpay.vn/content/images/img_congthuong.png"
+                      src="https://vtcpay.vn/content/images/img_congthuong.png"
+                  /></a>
+                  <a
+                    target="_blank"
+                    href="https://profile.globalsign.com/SiteSeal/siteSeal/profile/profile.do?p1=ece363f2&amp;p2=d747b0124e9e476610c441481b5dea1d4b40e5889114af531084256311c35f145c1ab61e066ffbced744ad4b0bc41a&amp;p3=dcc95e64af600deb0d7e87a699026c9ca3ee09a7"
+                    ><img
+                      class="ls-is-cached lazyloaded"
+                      data-src="https://vtcpay.vn/content/images/seal_125-50_blue.png"
+                      alt="Global sign"
+                      src="https://vtcpay.vn/content/images/seal_125-50_blue.png"
+                  /></a>
+                  <a
+                    target="_blank"
+                    href="https://sealserver.trustwave.com/cert.php?customerId=1c5e245c0b0c46f387ab007a3590f863&amp;size=105x54&amp;style=invert"
+                    ><img
+                      class="lazyloaded"
+                      data-src="https://vtcpay.vn/content/images/credibility_pci-logo.png"
+                      alt="PCI"
+                      src="https://vtcpay.vn/content/images/credibility_pci-logo.png"
+                  /></a>
+                </div>
+              </small>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="tt-footer-2 margin_top_15px">Ứng dụng VTC Pos</div>
+                <ul class="list_ungdung_ud">
+                  <li>
+                    <img
+                      alt="VTCPay"
+                      class="img-responsive lazyloaded"
+                      data-src="https://vtcpay.vn/content/images/logo-pay/app_qrcode.png"
+                      src="https://vtcpay.vn/content/images/logo-pay/app_qrcode.png"
+                    />
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="http://apple.co/2ttEpqa"
+                      style="margin-bottom: 3px"
+                      ><img
+                        alt="App store"
+                        class="img-responsive lazyloaded"
+                        data-src="https://vtcpay.vn/content/images/app-store.png"
+                        src="https://vtcpay.vn/content/images/app-store.png"
+                    /></a>
+                    <a target="_blank" href="http://bit.ly/1moQMGs"
+                      ><img
+                        alt="Google play"
+                        class="img-responsive ls-is-cached lazyloaded"
+                        data-src="https://vtcpay.vn/content/images/google-play.png"
+                        src="https://vtcpay.vn/content/images/google-play.png"
+                    /></a>
+                    <a
+                      target="_blank"
+                      href="https://appgallery.cloud.huawei.com/ag/n/app/C101703571?channelId=web&amp;detailType=0"
+                      ><img
+                        alt="App gallery"
+                        style="width: 123px; padding-top: 2px"
+                        class="img-responsive lazyloaded"
+                        data-src="https://vtcpay.vn/content/images/HuaweiGallery.png"
+                        src="https://vtcpay.vn/content/images/HuaweiGallery.png"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <script>
+      // tab-pc
+      let tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName("tabcontent");
+      tablinks = document.getElementsByClassName("tablinks");
+      tablinks[0].click();
+
+      function openTab(e, tabID) {
+        // Declare all variables
+        let i;
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabID).style.display = "block";
+        e.currentTarget.className += " active";
+      }
+
+      // tab-mb
+      let tabContentMob, tabLinkMob;
+
+      tabContentMob = document.getElementsByClassName("tabcontent-mb");
+      tabLinkMob = document.getElementsByClassName("tablink-mb");
+      tabLinkMob[0].click();
+
+      function openTabMob(e, tabID) {
+        // Declare all variables
+        let i;
+        for (i = 0; i < tabContentMob.length; i++) {
+          tabContentMob[i].style.display = "none";
+        }
+
+        for (i = 0; i < tabLinkMob.length; i++) {
+          tabLinkMob[i].className = tabLinkMob[i].className.replace(
+            "active",
+            ""
+          );
+        }
+
+        document.getElementById(tabID).style.display = "block";
+        e.currentTarget.className += " active";
+      }
+
+      // owl-slider-pc
+
+      $(document).ready(function () {
+        $(".owl-banner").owlCarousel({
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 3000, // Time between slides in milliseconds
+          autoplayHoverPause: true, // Pause on hover
+          items: 1, // Number of items to display
+          dots: true, // Show pagination dots
+        });
+      });
+
+      $(document).ready(function () {
+        let owl1 = $(".owl-pc.owl1").owlCarousel({
+          items: 1,
+          center: true,
+          loop: false,
+          callbacks: true,
+          URLhashListener: true,
+          startPosition: "zero",
+          dots: false,
+        });
+
+        let owl2 = $(".owl-pc.owl2").owlCarousel({
+          items: 1,
+          center: true,
+          loop: false,
+          callbacks: true,
+          URLhashListener: true,
+          startPosition: "zero",
+          dots: false,
+        });
+
+        let owl3 = $(".owl-pc.owl3").owlCarousel({
+          items: 1,
+          center: true,
+          loop: false,
+          callbacks: true,
+          URLhashListener: true,
+          startPosition: "zero",
+          dots: false,
+        });
+
+        let owl4 = $(".owl-pc.owl4").owlCarousel({
+          items: 1,
+          center: true,
+          loop: false,
+          callbacks: true,
+          URLhashListener: true,
+          startPosition: "zero",
+          dots: false,
+        });
+
+        let owl5 = $(".owl-pc.owl5").owlCarousel({
+          items: 1,
+          center: true,
+          loop: false,
+          callbacks: true,
+          URLhashListener: true,
+          startPosition: "zero",
+          dots: false,
+        });
+
+        let owl6 = $(".owl-pc.owl6").owlCarousel({
+          items: 1,
+          center: true,
+          loop: false,
+          callbacks: true,
+          URLhashListener: true,
+          startPosition: "zero",
+          dots: false,
+        });
+
+        // owl-slider-mobile
+        $(".owl-solution").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+          nav: true,
+        });
+
+        $(".owl-mb.owl-1").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+        });
+
+        $(".owl-mb.owl-2").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+        });
+
+        $(".owl-mb.owl-3").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+        });
+
+        $(".owl-mb.owl-4").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+        });
+
+        $(".owl-mb.owl-5").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+        });
+
+        $(".owl-mb.owl-6").owlCarousel({
+          loop: true,
+          items: 1,
+          dots: true,
+        });
+
+        $(".menu-mb").click(() => {
+          $(".list-menu-mb").slideToggle();
+          $(".qr-taingay").toggleClass("active");
+        });
+
+        $(".tab-pagi1").on("click", "a", function () {
+          $(".tab-pagi1 a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        $(".tab-pagi2").on("click", "a", function () {
+          $(".tab-pagi2 a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        $(".tab-pagi3").on("click", "a", function () {
+          $(".tab-pagi3 a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        $(".tab-pagi4").on("click", "a", function () {
+          $(".tab-pagi4 a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        $(".tab-pagi5").on("click", "a", function () {
+          $(".tab-pagi5 a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        $(".tab-pagi6").on("click", "a", function () {
+          $(".tab-pagi6 a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        // scroll hien menu moi
+        $(document).scroll(function () {
+          if ($(document).scrollTop() >= 100) {
+            $(".nav-scroll").css("display", "flex");
+          } else {
+            $(".nav-scroll").css("display", "none");
+          }
+        });
+
+        $(".nav-scroll .list-menu").on("click", "a", function () {
+          $(".nav-scroll .list-menu a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        // list tab mb
+        $("#tab-mb-holder").click(function () {
+          $(".list-tab-mb").toggle();
+        });
+
+        $(".tablink-mb").click(function () {
+          var das = $(this).html();
+          $("#tab-mb-holder").val(das);
+          $(".list-tab-mb").css("display", "none");
+        });
+      });
+    </script>
+
+    <script>
+      const cateImagesSrc = [
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+      ];
+      const img = document.querySelector(".cate-img-container img");
+      const cateLis = document.querySelectorAll(".cate-list li");
+      // const qrDownload = document.querySelector('.qr-taingay')
+      const listIconSln = document.querySelectorAll(".sln-img");
+      const listTextSln = document.querySelectorAll(".sln");
+
+      cateLis.forEach((cateLi, index) => {
+        cateLi.addEventListener("mouseover", () => {
+          // img.classList.add('hidden'); // Fade out the image
+          setTimeout(() => {
+            img.src = `./images/${cateImagesSrc[index]}.jpg`; // Change image src
+            // img.classList.remove('hidden'); // Fade in the original image
+          }, 100); // Delay matches the CSS transition duration
+        });
+
+        // window.addEventListener('scroll',() =>{
+        //   if(window.scrollY > 0) {
+        //     qrDownload.classList.add('active');
+
+        //   } else{
+        //     qrDownload.classList.remove('active');
+        //   }
+        // })
+      });
+
+      listIconSln.forEach((iconSln, index) => {
+        iconSln.addEventListener("mouseover", (e) => {
+          e.target.classList.add("zoom1");
+          listTextSln[index].classList.add("zoom2");
+        });
+
+        iconSln.addEventListener("mouseleave", (e) => {
+          e.target.classList.remove("zoom1");
+          listTextSln[index].classList.remove("zoom2");
+        });
+      });
+
+      // listTextSln.forEach((textSln, index) => {
+      //   textSln.addEventListener('mouseover', (e)=>{
+      //     e.target.classList.add('zoom2');
+      //     listIconSln[index].classList.add('zoom1')
+      //     console.log(e.target)
+      //   })
+
+      //   textSln.addEventListener('mouseleave', (e)=>{
+      //     e.target.classList.remove('zoom2');
+      //     listIconSln[index].classList.remove('zoom1')
+      //     console.log(e.target)
+      //   })
+      // })
+    </script>
+  </body>
+</html>
